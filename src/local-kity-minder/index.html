@@ -42,7 +42,7 @@
 		}
 	</style>
 </head>
-<body ng-app="kityminderDemo" ng-controller="MainController">
+<body ng-app="kityminderWindow" ng-controller="MainController">
 <h1 class="editor-title">
 	<div style="float:right;color:#fff">Zoom In/Out--Ctrl+Scoll
 	<a href="#" style="color: #fff;font-size: 8px;padding: 0 10px 0 100px;">
@@ -79,7 +79,7 @@
 <script src="diy.js"></script>
 
 <script>
-	angular.module('kityminderDemo', ['kityminderEditor'])
+	angular.module('kityminderWindow', ['kityminderEditor'])
 	.controller('MainController', function($scope) {
 		$scope.initEditor = function(editor, minder) {
 			window.editor = editor;
