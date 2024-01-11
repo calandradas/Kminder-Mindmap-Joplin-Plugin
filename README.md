@@ -45,7 +45,7 @@ Then follow the second step of the installation from file.
 After the installation is complete, create a new note, and a brain icon will appear in the upper right corner of Joplin. Click it to enter the mind map editing mode. To edit an existing mindmap, you need to be in markdown mode. When the mouse is placed on the mindmap, an Edit icon will appear. Click it to enter the mind map editing mode.
 
 List of commonly used shortcut keys:
-|   Key  |  Perform   |
+|   Key  |  Performing   |
 | --- | --- |
 |tab  | New Child Item  |
 |shift+tab |New Parent Item|
@@ -116,7 +116,7 @@ npm run dist
 编辑已有mindmap,须在markdown模式下，鼠标放到脑图上会出现Edit标志，点击即可进入脑图编辑模式。
 
 常用快捷键列表：
-|   Key  |  Perform   |
+|   Key  |  Performing   |
 | --- | --- |
 |tab  |新建Child项  |
 |shift+tab |新建父级项|
