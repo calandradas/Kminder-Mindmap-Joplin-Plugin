@@ -1,0 +1,13 @@
+{
+	"manifest_version": 1,
+	"id": "calandra.kityminder.joplin",
+	"app_min_version": "2.8",
+	"version": "0.8",
+	"name": "Kityminder Mindmap Joplin Plugin",
+	"description": "KityMinder Mindmap Joplin Plugin",
+	"author": "calandra das",
+	"homepage_url": "https://github.com/calandradas/Kityminder-Mindmap-Joplin-Plugin",
+	"repository_url": "https://github.com/calandradas/Kityminder-Mindmap-Joplin-Plugin.git",
+	"keywords": [],
+	"categories": []
+}
