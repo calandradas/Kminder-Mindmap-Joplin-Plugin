@@ -8,15 +8,15 @@ Forked from xeden3's joplin-plugin-kity-minder project and made several modifica
 
     1.Adjusted part of the UI to make it more in line with operating habits.
 
-    2.Re-added the import and export functions of local-kity-minder and fixed some bugs.
+    2.Supports export in JSON, MD, and PNG, and supports import in JSON and MD.
 
     3.i18n now supports English, 中文, 日本語, Español, Français and Deutsch. 
     
     4.Supports switching between different languages.
 
-    5.Removed Baidu image searching function and internationalized all text. 
+    5.Removed the native Kity Minder Baidu image search function, and internationalized all the text. 
 
-In the future, multilingual switching, uploading of local images and other functions will be realized.
+Uploading local images and other functions is in developing.
 
 Thanks to the following teams and individuals for their excellent work:
 
@@ -78,15 +78,15 @@ Kityminder Mindmap Joplin Plugin基于百度脑图的开源项目Kity Minder构�
 
     1.调整了部分UI，看起来更符合操作习惯。
 
-    2.把local-kity-minder的导入导出功能重新添加上，修了一些bug。
+    2.把local-kity-minder的导入导出功能重新添加上，支持json、md、png文件格式的导出，支持json、md格式的导入。
 
     3.多语言国际化现在支持英语、中文、日语、西班牙语、法语、德语。
     
     4.支持多语言的切换。
 
-    5.去掉百度搜索图片功能，将文字全部国际化。
+    5.去掉原生Kity Minder百度搜索图片功能，并将文字全部国际化。
 
-未来将实现本地图片的上传等功能。
+本地图片的上传等功能正在开发中。
 
 在此感谢以下团队和个人的优秀工作:
 
