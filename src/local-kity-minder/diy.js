@@ -99,6 +99,15 @@
 		reader.readAsText(file);
 	});
 
+	//reset mindmap_diagram default language
+	$('#selectLang').on('change', function () {
+		if (window.parent.document.getElementById('mindmap_diagram_language') != null) {
+			//alert(this.value);
+			window.parent.document.getElementById('mindmap_diagram_language').value = this.value;
+		}
+		window.location.reload();
+	});
+
 	window.onload = function () {
 		// init loading mindmap diagram and the existed mindmap data or create new default mindmap json data
 		let parent = window.parent.document.getElementById('mindmap_diagram_json');
@@ -106,12 +115,37 @@
 		if (parent != null && parent.value != "")
 			data_json = parent.value;
 		else
-			data_json = `{"root":{"data":{"id":"cmhllt94xb40","created":1661683403686,"text":"${maintopic}"},"children":[{"data":{"id":"cmhllt94xb40","created":1661683403686,"text":"Topic3"},"children":[]},{"data":{"id":"cmhllt94xb40","created":1661683403686,"text":"Topic4"},"children":[]},{"data":{"id":"cmhllt94xb40","created":1661683403686,"text":"Topic1"},"children":[]},{"data":{"id":"cmhllt94xb40","created":1661683403686,"text":"Topic2"},"children":[]}]},"template":"default","theme":"fresh-purple","version":"1.4.33"}`;
+			data_json = `{"root":{"data":{"id":"cmhllt94xb40","created":1661683403686,"text":"${maintopic}"},"children":[{"data":{"id":"cybyhdvw3qg0","created":1704984272746,"text":"Topic1"},"children":[]},{"data":{"id":"cybyhfxtzd40","created":1704984277217,"text":"Topic2"},"children":[]},{"data":{"id":"cybyhhzf1ew0","created":1704984281667,"text":"Topic3"},"children":[]},{"data":{"id":"cybyhjs9st40","created":1704984285588,"text":"Topic4"},"children":[]}]},"template":"default","theme":"fresh-purple","version":"1.4.33"}`;
 		//loading mindmap data in diagram
 		editor.minder.importData('json', data_json).then(function (data) {
 			console.log(data);
 			$(data_json).val('');
 		});
+
+		//set select opstion to default lang 
+		let en = '', zh_cn = '', jp = '', es = '', fr = '', de = '';
+		switch (_lang_default) {
+			case 'en':
+				en = 'selected';
+				break;
+			case 'zh_cn':
+				zh_cn = 'selected';
+				break;
+			case 'jp':
+				jp = 'selected';
+				break;
+			case 'es':
+				es = 'selected';
+				break;
+			case 'fr':
+				fr = 'selected';
+				break;
+			case 'de':
+				de = 'selected';
+				break;
+		}
+		let opstions = `<option value=\"en\" ${en} >English</option><option value=\"zh_cn\" ${zh_cn} >简体中文</option><option value=\"jp\" ${jp} >日本語</option><option value=\"es\" ${es} >Español</option><option value=\"fr\" ${fr} >Français</option><option value=\"de\" ${de} >Deutsch</option>`;
+		document.getElementById('selectLang').innerHTML = opstions;
 
 		// set a timmer to sync mindmap data to parent diagram to save data per 5s
 		setInterval(function () {
@@ -121,7 +155,7 @@
 			editor.minder.exportData('png').then(function (content) {
 				window.parent.document.getElementById('mindmap_diagram_png').value = content;
 			});
-		}, 5000);
+		}, 1000);
 
 		// mousewheel scroll zoom in/out
 		$(".minder-editor").on('mousewheel DOMMouseScroll', function (event) {

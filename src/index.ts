@@ -115,10 +115,10 @@ joplin.plugins.register({
 				isEnum: true,
 				options: {
 					'en': 'English',
-					'zh-cn': '简体中文',
-					'jp': 'Japanese',
-					'fr': 'French',
-					'es': 'Spainish',
+					'zh_cn': '简体中文',
+					'jp': '日本語',
+					'fr': 'Français',
+					'es': 'Español',
 					'de': 'Deutsch',
 				},
 				type: SettingItemType.String,
@@ -141,7 +141,7 @@ joplin.plugins.register({
         // Register command
         await joplin.commands.register({
             name: CommandsId.NewMindmap,
-            label: 'Create new mindmap',
+            label: 'New Mindmap',
             iconName: 'fas fa-brain',
             execute: async () => {
                 await open_edit_dlg("", null);
@@ -150,12 +150,12 @@ joplin.plugins.register({
 
         // Register menu
         const commandsSubMenu: MenuItem[] = Object.values(CommandsId).map(command => ({ commandName: command }));
-        await joplin.views.menus.create('menu-kityminder', 'Kity Minder', commandsSubMenu, MenuItemLocation.Tools);
+        await joplin.views.menus.create('menu-kityminder', 'Kityminder Mindmap', commandsSubMenu, MenuItemLocation.Tools);
 		
 		// 通过按键来新增思维导图
 		await joplin.commands.register({
 			name: 'addnewMindmap',
-			label: 'Create new mindmap',
+			label: 'New Mindmap',
 			iconName: 'fas fa-brain',
 			execute: async () => {
 				await open_edit_dlg("", null);

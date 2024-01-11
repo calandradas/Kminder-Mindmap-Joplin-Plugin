@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<title>KityMinder Editor - Powered By FEX</title>
@@ -17,12 +18,14 @@
 	<link rel="stylesheet" href="kityminder.editor.min.css">
 
 	<style>
-		html, body {
+		html,
+		body {
 			margin: 0;
 			padding: 0;
 			height: 100%;
 			overflow: hidden;
 		}
+
 		h1.editor-title {
 			background: #4f72d3;
 			color: white;
@@ -33,6 +36,7 @@
 			font-family: 'Hiragino Sans GB', 'Arial', 'Microsoft Yahei';
 			font-weight: normal;
 		}
+
 		div.minder-editor-container {
 			position: absolute;
 			top: 30px;
@@ -42,15 +46,19 @@
 		}
 	</style>
 </head>
+
 <body ng-app="kityminderWindow" ng-controller="MainController">
-<h1 class="editor-title">
-	<div style="float:right;color:#fff">Zoom In/Out--Ctrl+Scoll
-	<a href="#" style="color: #fff;font-size: 8px;padding: 0 10px 0 100px;">
-		KityMinder Editor - Powered By FEX
-	</a></div>
-</h1>
-<kityminder-editor on-init="initEditor(editor, minder)" data-theme="fresh-green"></kityminder-editor>
-<iframe name="frameFile" style="display:none;"></iframe>
+	<h1 class="editor-title">
+		<div style="float:right;color:#fff">
+			<select style="background-color: #656d77; padding: 0 5px;" id="selectLang"></select>
+			<span style="padding: 0 0 0 15px;">Zoom In/Out--Ctrl+Scoll</span>
+			<a href="#" style="color: #fff;font-size: 8px;padding: 0 10px 0 100px;">
+				KityMinder Editor - Powered By FEX
+			</a>
+		</div>
+	</h1>
+	<kityminder-editor on-init="initEditor(editor, minder)" data-theme="fresh-green"></kityminder-editor>
+	<iframe name="frameFile" style="display:none;"></iframe>
 </body>
 
 <!-- bower:js -->
@@ -80,11 +88,12 @@
 
 <script>
 	angular.module('kityminderWindow', ['kityminderEditor'])
-	.controller('MainController', function($scope) {
-		$scope.initEditor = function(editor, minder) {
-			window.editor = editor;
-			window.minder = minder;
-		};
-	});
+		.controller('MainController', function ($scope) {
+			$scope.initEditor = function (editor, minder) {
+				window.editor = editor;
+				window.minder = minder;
+			};
+		});
 </script>
+
 </html>

@@ -4,13 +4,15 @@ Kityminder Mindmap Joplin Plugin is a Joplin mind map plug-in built on Baidu Bra
 
 Forked from xeden3's joplin-plugin-kity-minder project and made several modifications:
 
-    1.Adjusted part of the UI to make it more in line with operating habits;
+    1.Adjusted part of the UI to make it more in line with operating habits.
 
-    2.Re-added the import and export functions of local-kity-minder and fixed some minor bugs;
+    2.Re-added the import and export functions of local-kity-minder and fixed some bugs.
 
-    3.Multilingual internationalization now supports English, Chinese, Japanese, Spanish, French, and German;
+    3.i18n now supports English, 中文, 日本語, Español, Français and Deutsch. 
+    
+    4.Supports switching between different languages.
 
-    4.Removed Baidu image search function and internationalized all uninternationalized text. 
+    5.Removed Baidu image searching function and internationalized all text. 
 
 In the future, multilingual switching, uploading of local images and other functions will be realized.
 
@@ -70,17 +72,19 @@ Other shortcut keys can be seen by right-clicking on items.
 
 Kityminder Mindmap Joplin Plugin基于百度脑图的开源项目Kity Minder构建的Joplin思维导图插件；
 
-从xeden3的joplin-plugin-kity-minder项目fork,做了几处修改:
+从xeden3的joplin-plugin-kity-minder项目fork,做了功能提升:
 
-    1.调整了部分UI，看起来更符合操作习惯;
+    1.调整了部分UI，看起来更符合操作习惯。
 
-    2.把local-kity-minder的导入导出功能重新添加上，修了一些小bug；
+    2.把local-kity-minder的导入导出功能重新添加上，修了一些bug。
 
-    3.多语言国际化现在支持英语、中文、日语、西班牙语、法语、德语;
+    3.多语言国际化现在支持英语、中文、日语、西班牙语、法语、德语。
+    
+    4.支持各语言切换。
 
-    4.去掉百度搜索图片功能，将未国际化的文字全部国际化。
+    4.去掉百度搜索图片功能，将文字全部国际化。
 
-未来将实现多语言切换、本地图片的上传等功能。
+未来将实现本地图片的上传等功能。
 
 在此感谢以下团队和个人的优秀工作:
 

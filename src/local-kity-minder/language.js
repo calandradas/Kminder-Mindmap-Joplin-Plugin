@@ -1,4 +1,4 @@
-var _lang_default = 'en';
+var _lang_default = 'en'; // surport English, 简体中文, 日本語, Español, Français and Deutsch
 
 try {
   let language = window.parent.document.getElementById('mindmap_diagram_language');
@@ -442,7 +442,7 @@ var _lang_pack = {
       'resource': 'Resource...'
     }
   },
-  'zh-cn': {
+  'zh_cn': {
     'template': {
       'default': '思维导图',
       'tianpan': '天盘图',
