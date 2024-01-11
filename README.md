@@ -24,9 +24,9 @@ FEX team and Kity Minder's open source project [kity-minder](https://github.com/
 
 wythe0102provided the localized Kity Minder project [local-kity-minder](https://github.com/wythe0102/local-kity-minder)
 
-xeden3's Joplin plug-in project [joplin-plugin-kity-minder] build this project foundation(https://github.com/xeden3/joplin-plugin-kity-minder)
+xeden3's Joplin plug-in project build this project foundation [joplin-plugin-kity-minder](https://github.com/xeden3/joplin-plugin-kity-minder)
 
-## Build Setup
+## Compiling and Installation
 
 ```bash
 git clone https://github.com/calandradas/Kityminder-Mindmap-Joplin-Plugin.git
@@ -44,11 +44,6 @@ Then follow the second step of the installation from file.
 
 2.Open Joplin's "Tools->Options->Plugins" menu, click on "Manage your plugins", select "Install from file", and select the corresponding calandra.kityminder.joplin.jpl to install it.
 
-## Installation by searching
-
-1.Open Joplin's "Tools->Options->Plugins" menu, and enter the keyword mind in the search box.
-
-2.Select calandra.kityminder to install it.
 
 ## how to use Kityminder Mindmap Plugin
 
@@ -94,7 +89,7 @@ FEX团队和Kity Minder的开源项目[kity-minder](https://github.com/fex-team/
 
 wythe0102提供的本地化Kity Minder项目[local-kity-minder](https://github.com/wythe0102/local-kity-minder)
 
-xeden3的Joplin插件项目[joplin-plugin-kity-minder]提供的基础(https://github.com/xeden3/joplin-plugin-kity-minder)
+xeden3的Joplin插件项目提供本项目的基础[joplin-plugin-kity-minder](https://github.com/xeden3/joplin-plugin-kity-minder)
 
 
 ## 编译安装
@@ -114,12 +109,6 @@ npm run dist
 1 先通过 https://github.com/calandradas/Kityminder-Mindmap-Joplin-Plugin/releases 下载最新版本的 calandra.kityminder.joplin.zip 文件，并解压缩
 
 2 打开Joplin的 "工具\选项\插件" 菜单，点击 "管理你的插件"，选择 "从文件安装"，选择对应的 calandra.kityminder.joplin.jpl 即可
-
-## 通过搜索安装
-
-1 打开Joplin的 "工具\选项\插件" 菜单，在搜索框上填入mind关键字
-
-2 选择 calandra.kityminder 进行安装
 
 ## 使用
 
