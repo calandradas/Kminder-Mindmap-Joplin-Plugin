@@ -4,27 +4,35 @@
 
 Kityminder Mindmap Joplin Plugin is a Joplin mind map plug-in built on Baidu Brain Map's open source project Kity Minder.
 
-Forked from xeden3's joplin-plugin-kity-minder project and made several modifications:
+Forked from xeden3's joplin-plugin-kity-minder project and made several modifications.
 
-    1.Adjusted part of the UI to make it more in line with operating habits.
+## Features
 
-    2.Supports export in JSON, MD, and PNG, and supports import in JSON and MD.
+* Adjusted part of the UI to make it more in line with operating habits.
 
-    3.i18n now supports English, 中文, 日本語, Español, Français and Deutsch. 
-    
-    4.Supports switching between different languages.
+* Supports export in JSON, MD, and PNG, and import in JSON and MD.
 
-    5.Removed the native Kity Minder Baidu image search function, and internationalized all the text. 
+* i18n now supports English, 中文, 日本語, Español, Français and Deutsch. 
 
-Uploading local images and other functions is in developing.
+* Supports switching between different languages.
+
+* Removed the native Kity Minder Baidu image search function, and internationalized all the text. 
+
+## Roadmap
+
+* Uploading local images is in developing.
+
+* Others
+
+## Thanks
 
 Thanks to the following teams and individuals for their excellent work:
 
-FEX team and Kity Minder's open source project [kity-minder](https://github.com/fex-team/kityminder-editor.git)
+* FEX team and Kity Minder's open source project [kity-minder](https://github.com/fex-team/kityminder-editor.git)
 
-wythe0102provided the localized Kity Minder project [local-kity-minder](https://github.com/wythe0102/local-kity-minder)
+* wythe0102provided the localized Kity Minder project [local-kity-minder](https://github.com/wythe0102/local-kity-minder)
 
-xeden3's Joplin plug-in project build this project foundation [joplin-plugin-kity-minder](https://github.com/xeden3/joplin-plugin-kity-minder)
+* xeden3's Joplin plug-in project build this project foundation [joplin-plugin-kity-minder](https://github.com/xeden3/joplin-plugin-kity-minder)
 
 ## Compiling and Installation
 
@@ -44,8 +52,7 @@ Then follow the second step of the installation from file.
 
 2.Open Joplin's "Tools->Options->Plugins" menu, click on "Manage your plugins", select "Install from file", and select the corresponding calandra.kityminder.joplin.jpl to install it.
 
-
-## how to use Kityminder Mindmap Plugin
+## How to use Kityminder Mindmap Plugin
 
 After the installation is complete, create a new note, and a brain icon will appear in the upper right corner of Joplin. Click it to enter the mind map editing mode. To edit an existing mindmap, you need to be in markdown mode. When the mouse is placed on the mindmap, an Edit icon will appear. Click it to enter the mind map editing mode.
 
@@ -69,27 +76,33 @@ Other shortcut keys can be seen by right-clicking on items.
 
 Kityminder Mindmap Joplin Plugin基于百度脑图的开源项目Kity Minder构建的Joplin思维导图插件；
 
-从xeden3的joplin-plugin-kity-minder项目fork,做了功能提升:
+从xeden3的joplin-plugin-kity-minder项目fork,做了功能提升.
 
-    1.调整了部分UI，看起来更符合操作习惯。
+## 功能提升
 
-    2.把local-kity-minder的导入导出功能重新添加上，支持json、md、png文件格式的导出，支持json、md格式的导入。
+* 调整了部分UI，看起来更符合操作习惯。
 
-    3.多语言国际化现在支持英语、中文、日语、西班牙语、法语、德语。
+* 把local-kity-minder的导入导出功能重新添加上，支持json、md、png文件格式的导出，支持json、md格式的导入。
+
+* 多语言国际化现在支持英语、中文、日语、西班牙语、法语、德语。
     
-    4.支持多语言的切换。
+* 支持多语言的切换。
 
-    5.去掉原生Kity Minder百度搜索图片功能，并将文字全部国际化。
+* 去掉原生Kity Minder百度搜索图片功能，并将文字全部国际化。
+
+## Roadmap
 
 本地图片的上传等功能正在开发中。
 
+## 感谢
+
 在此感谢以下团队和个人的优秀工作:
 
-FEX团队和Kity Minder的开源项目[kity-minder](https://github.com/fex-team/kityminder-editor.git)
+* FEX团队和Kity Minder的开源项目[kity-minder](https://github.com/fex-team/kityminder-editor.git)
 
-wythe0102提供的本地化Kity Minder项目[local-kity-minder](https://github.com/wythe0102/local-kity-minder)
+* wythe0102提供的本地化Kity Minder项目[local-kity-minder](https://github.com/wythe0102/local-kity-minder)
 
-xeden3的Joplin插件项目提供本项目的基础[joplin-plugin-kity-minder](https://github.com/xeden3/joplin-plugin-kity-minder)
+* xeden3的Joplin插件项目提供本项目的基础[joplin-plugin-kity-minder](https://github.com/xeden3/joplin-plugin-kity-minder)
 
 
 ## 编译安装
@@ -106,9 +119,9 @@ npm run dist
 
 ## 从文件安装
 
-1 先通过 https://github.com/calandradas/Kityminder-Mindmap-Joplin-Plugin/releases 下载最新版本的 calandra.kityminder.joplin.zip 文件，并解压缩
+* 1 先通过 https://github.com/calandradas/Kityminder-Mindmap-Joplin-Plugin/releases 下载最新版本的 calandra.kityminder.joplin.zip 文件，并解压缩
 
-2 打开Joplin的 "工具\选项\插件" 菜单，点击 "管理你的插件"，选择 "从文件安装"，选择对应的 calandra.kityminder.joplin.jpl 即可
+* 2 打开Joplin的 "工具\选项\插件" 菜单，点击 "管理你的插件"，选择 "从文件安装"，选择对应的 calandra.kityminder.joplin.jpl 即可
 
 ## 使用
 
