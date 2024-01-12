@@ -129,14 +129,14 @@ joplin.plugins.register({
 				section: 'settings.kityminder',
 				public: true,
 				label: 'Language',
-				description: `You can choose the language you need, including English, Chinese, Japanese etc.`
+				description: 'You can choose the language you need, including English, 简体中文, 日本語, Français, Español, Deutsch.'
 			},
 		});
 
 
 
 		await joplin.settings.registerSection('settings.kityminder', {
-			label: 'Kity Minder',
+			label: 'Kityminder Mindmap',
 			iconName: 'fas fa-brain'
 		});
 
