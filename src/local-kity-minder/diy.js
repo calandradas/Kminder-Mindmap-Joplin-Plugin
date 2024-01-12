@@ -99,15 +99,6 @@
 		reader.readAsText(file);
 	});
 
-	//reset mindmap_diagram default language
-	$('#selectLang').on('change', function () {
-		if (window.parent.document.getElementById('mindmap_diagram_language') != null) {
-			//alert(this.value);
-			window.parent.document.getElementById('mindmap_diagram_language').value = this.value;
-		}
-		window.location.reload();
-	});
-
 	window.onload = function () {
 		// init loading mindmap diagram and the existed mindmap data or create new default mindmap json data
 		let parent = window.parent.document.getElementById('mindmap_diagram_json');
@@ -123,37 +114,11 @@
 			$(data_json).val('');
 		});
 
-		//set select opstion to default lang 
-		let en = '', zh_cn = '', jp = '', es = '', fr = '', de = '';
-		switch (_lang_default) {
-			case 'en':
-				en = 'selected';
-				break;
-			case 'zh_cn':
-				zh_cn = 'selected';
-				break;
-			case 'jp':
-				jp = 'selected';
-				break;
-			case 'es':
-				es = 'selected';
-				break;
-			case 'fr':
-				fr = 'selected';
-				break;
-			case 'de':
-				de = 'selected';
-				break;
-		}
-		let opstions = `<option value=\"en\" ${en} >English</option><option value=\"zh_cn\" ${zh_cn} >简体中文</option><option value=\"jp\" ${jp} >日本語</option><option value=\"es\" ${es} >Español</option><option value=\"fr\" ${fr} >Français</option><option value=\"de\" ${de} >Deutsch</option>`;
-		document.getElementById('selectLang').innerHTML = opstions;
-
 		// set a timmer to sync mindmap data to parent diagram to save data per 1s
 		setInterval(function () {
 			editor.minder.exportData('json').then(function (jsoncontent) {
 				//json and png data not to save until changing
-				if (jsoncontent != init_data_json && parent.value != jsoncontent)
-				{
+				if (jsoncontent != init_data_json && parent.value != jsoncontent) {
 					parent.value = jsoncontent;
 					editor.minder.exportData('png').then(function (pngcontent) {
 						let parent_png = window.parent.document.getElementById('mindmap_diagram_png');
