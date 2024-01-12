@@ -1,10 +1,10 @@
 # Kityminder Mindmap Joplin Plugin
 
-![demo](demo.png "demo")
-
 Kityminder Mindmap Joplin Plugin is a Joplin mind map plug-in built on Baidu Brain Map's open source project Kity Minder.
 
 Forked from xeden3's joplin-plugin-kity-minder project and made several modifications.
+
+![demo](demo.png "demo")
 
 ## Features
 
