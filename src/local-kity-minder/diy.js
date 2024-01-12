@@ -112,10 +112,11 @@
 		// init loading mindmap diagram and the existed mindmap data or create new default mindmap json data
 		let parent = window.parent.document.getElementById('mindmap_diagram_json');
 		let data_json, maintopic = _lang_pack[_lang_default]['maintopic'];
+		let init_data_json = `{"root":{"data":{"id":"cmhllt94xb40","created":1661683403686,"text":"${maintopic}"},"children":[{"data":{"id":"cybyhdvw3qg0","created":1704984272746,"text":"Topic1"},"children":[]},{"data":{"id":"cybyhfxtzd40","created":1704984277217,"text":"Topic2"},"children":[]},{"data":{"id":"cybyhhzf1ew0","created":1704984281667,"text":"Topic3"},"children":[]},{"data":{"id":"cybyhjs9st40","created":1704984285588,"text":"Topic4"},"children":[]}]},"template":"default","theme":"fresh-purple","version":"1.4.33"}`;
 		if (parent != null && parent.value != "")
 			data_json = parent.value;
 		else
-			data_json = `{"root":{"data":{"id":"cmhllt94xb40","created":1661683403686,"text":"${maintopic}"},"children":[{"data":{"id":"cybyhdvw3qg0","created":1704984272746,"text":"Topic1"},"children":[]},{"data":{"id":"cybyhfxtzd40","created":1704984277217,"text":"Topic2"},"children":[]},{"data":{"id":"cybyhhzf1ew0","created":1704984281667,"text":"Topic3"},"children":[]},{"data":{"id":"cybyhjs9st40","created":1704984285588,"text":"Topic4"},"children":[]}]},"template":"default","theme":"fresh-purple","version":"1.4.33"}`;
+			data_json = init_data_json;
 		//loading mindmap data in diagram
 		editor.minder.importData('json', data_json).then(function (data) {
 			console.log(data);
@@ -147,14 +148,21 @@
 		let opstions = `<option value=\"en\" ${en} >English</option><option value=\"zh_cn\" ${zh_cn} >简体中文</option><option value=\"jp\" ${jp} >日本語</option><option value=\"es\" ${es} >Español</option><option value=\"fr\" ${fr} >Français</option><option value=\"de\" ${de} >Deutsch</option>`;
 		document.getElementById('selectLang').innerHTML = opstions;
 
-		// set a timmer to sync mindmap data to parent diagram to save data per 5s
+		// set a timmer to sync mindmap data to parent diagram to save data per 1s
 		setInterval(function () {
-			editor.minder.exportData('json').then(function (content) {
-				parent.value = content;
+			editor.minder.exportData('json').then(function (jsoncontent) {
+				//json and png data not to save until changing
+				if (jsoncontent != init_data_json && parent.value != jsoncontent)
+				{
+					parent.value = jsoncontent;
+					editor.minder.exportData('png').then(function (pngcontent) {
+						let parent_png = window.parent.document.getElementById('mindmap_diagram_png');
+						if (parent_png.value != pngcontent)
+							parent_png.value = pngcontent;
+					});
+				}
 			});
-			editor.minder.exportData('png').then(function (content) {
-				window.parent.document.getElementById('mindmap_diagram_png').value = content;
-			});
+
 		}, 1000);
 
 		// mousewheel scroll zoom in/out

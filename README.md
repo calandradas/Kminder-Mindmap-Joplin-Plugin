@@ -10,7 +10,7 @@ Forked from xeden3's joplin-plugin-kity-minder project and made several modifica
 
 * Adjusted part of the UI to make it more in line with operating habits.
 
-* Supports export in JSON, MD, and PNG, and import in JSON and MD.
+* Supports export JSON, MD, and PNG, and import JSON and MD.
 
 * i18n now include English, 中文, 日本語, Español, Français and Deutsch. 
 
