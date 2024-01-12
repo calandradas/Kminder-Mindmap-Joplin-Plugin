@@ -4,7 +4,7 @@ Kityminder Mindmap Joplin Plugin is a Joplin mind map plug-in built on Baidu Bra
 
 Forked from xeden3's joplin-plugin-kity-minder project and made several modifications.
 
-![demo](demo.png "demo")
+![demo](demo.gif "demo")
 
 ## Features
 
@@ -12,7 +12,7 @@ Forked from xeden3's joplin-plugin-kity-minder project and made several modifica
 
 * Supports export in JSON, MD, and PNG, and import in JSON and MD.
 
-* i18n now supports English, 中文, 日本語, Español, Français and Deutsch. 
+* i18n now include English, 中文, 日本語, Español, Français and Deutsch. 
 
 * Supports switching between different languages.
 
