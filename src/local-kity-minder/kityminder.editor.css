@@ -15,7 +15,7 @@
   position: absolute;
   background: white;
   outline: none;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px #00000080;
   left: 0;
   top: 0;
   padding: 3px 5px;
@@ -336,7 +336,7 @@ div.minder-editor-container {
   position: absolute;
   bottom: 0;
   height: 20px;
-  background: rgba(0, 0, 0, 0.5);
+  background: #00000080;
   left: 0;
   right: 0;
   color: white;
@@ -638,7 +638,7 @@ div.minder-editor-container {
 }
 #previewer-content .highlight {
   background: yellow;
-  color: red;
+  color: rgb(11, 11, 11);
 }
 #previewer-content.ng-hide {
   display: block!important;
@@ -1420,7 +1420,7 @@ div a.theme-item {
   padding: 5px 0;
   left: 10px;
   bottom: 10px;
-  background: #fc8383;
+  background: #79a5e2;
   color: #fff;
   border-radius: 4px;
   z-index: 10;
@@ -1442,7 +1442,7 @@ div a.theme-item {
   display: block;
 }
 .nav-bar .nav-btn.active {
-  background-color: #5A6378;
+  background-color: #888888;
 }
 .nav-bar .zoom-in .icon {
   background-position: 0 -730px;
@@ -1471,7 +1471,7 @@ div a.theme-item {
 .nav-bar .zoom-pan {
   width: 2px;
   height: 70px;
-  box-shadow: 0 1px #E50000;
+  box-shadow: 0 1px #ece9e9;
   position: relative;
   background: white;
   margin: 3px auto;
@@ -1511,7 +1511,7 @@ div a.theme-item {
   position: absolute;
   left: 45px;
   bottom: 30px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 8px #00000033;
   border-radius: 0 2px 2px 0;
   padding: 1px;
   z-index: 9;

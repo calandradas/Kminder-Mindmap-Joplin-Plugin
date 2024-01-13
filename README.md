@@ -1,14 +1,12 @@
 # Kityminder Mindmap Joplin Plugin
 
-Kityminder Mindmap Joplin Plugin is a Joplin mind map plug-in built on Baidu Brain Map's open source project Kity Minder.
+Kityminder Mindmap Joplin Plugin is a mindmap plug-in built on Baidu Brain Map opensource project Kity Minder.
 
 Forked from xeden3's joplin-plugin-kity-minder project and made several modifications.
 
 ![demo](demo.gif "demo")
 
 ## Features
-
-* Adjusted part of the UI to make it more in line with operating habits.
 
 * Supports export JSON, MD, and PNG, and import JSON and MD.
 
@@ -18,9 +16,13 @@ Forked from xeden3's joplin-plugin-kity-minder project and made several modifica
 
 * Removed the native Kity Minder Baidu image search function, and internationalized all the text. 
 
+* Adjusted part of the UI to make it more in line with operating habits.
+
 ## Roadmap
 
 * Uploading local images is in developing.
+
+* Export to SVG
 
 * Others
 
@@ -28,7 +30,7 @@ Forked from xeden3's joplin-plugin-kity-minder project and made several modifica
 
 Thanks to the following teams and individuals for their excellent work:
 
-* FEX team and Kity Minder's open source project [kity-minder](https://github.com/fex-team/kityminder-editor.git)
+* Baidu FEX team and Kity Minder's open source project [kity-minder](https://github.com/fex-team/kityminder-editor.git)
 
 * wythe0102provided the localized Kity Minder project [local-kity-minder](https://github.com/wythe0102/local-kity-minder)
 
