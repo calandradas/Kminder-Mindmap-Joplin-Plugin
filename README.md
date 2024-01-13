@@ -80,9 +80,9 @@ Kityminder Mindmap Joplin Plugin基于百度脑图的开源项目Kity Minder构�
 
 ## 功能提升
 
-* 调整了部分UI，看起来更符合操作习惯。
+* 支持json、md、png文件格式的导出，支持json、md格式的导入。
 
-* 把local-kity-minder的导入导出功能重新添加上，支持json、md、png文件格式的导出，支持json、md格式的导入。
+* v0.8.2实现本地图片的上传功能。
 
 * 多语言国际化现在支持英语、中文、日语、西班牙语、法语、德语。
     
@@ -90,9 +90,11 @@ Kityminder Mindmap Joplin Plugin基于百度脑图的开源项目Kity Minder构�
 
 * 去掉原生Kity Minder百度搜索图片功能，并将文字全部国际化。
 
+* 调整了部分UI，看起来更符合操作习惯。
+
 ## Roadmap
 
-本地图片的上传等功能正在开发中。
+others
 
 ## 感谢
 
