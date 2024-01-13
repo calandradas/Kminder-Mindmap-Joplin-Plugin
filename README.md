@@ -10,7 +10,7 @@ Forked from xeden3's joplin-plugin-kity-minder project and made several modifica
 
 * Supports export JSON, MD, and PNG, and import JSON and MD.
 
-* v0.8.2 supports uploading local images into mindmap.
+* v0.8.2 supports loading local images into mindmap.
 
 * i18n now include English, 中文, 日本語, Español, Français and Deutsch. 
 
