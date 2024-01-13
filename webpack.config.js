@@ -181,7 +181,8 @@ const baseConfig = {
 	},
 };
 
-const pluginConfig = { ...baseConfig, entry: './src/index.ts',
+const pluginConfig = {
+	...baseConfig, entry: './src/index.ts',
 	resolve: {
 		alias: {
 			api: path.resolve(__dirname, 'api'),
@@ -213,15 +214,18 @@ const pluginConfig = { ...baseConfig, entry: './src/index.ts',
 				},
 			],
 		}),
-	] };
+	]
+};
 
-const extraScriptConfig = { ...baseConfig, resolve: {
-	alias: {
-		api: path.resolve(__dirname, 'api'),
-	},
-	fallback: moduleFallback,
-	extensions: ['.js', '.tsx', '.ts', '.json'],
-} };
+const extraScriptConfig = {
+	...baseConfig, resolve: {
+		alias: {
+			api: path.resolve(__dirname, 'api'),
+		},
+		fallback: moduleFallback,
+		extensions: ['.js', '.tsx', '.ts', '.json'],
+	}
+};
 
 const createArchiveConfig = {
 	stats: 'errors-only',
@@ -269,8 +273,10 @@ function buildExtraScriptConfigs(userConfig) {
 
 	for (const scriptName of userConfig.extraScripts) {
 		const scriptPaths = resolveExtraScriptPath(scriptName);
-		output.push({ ...extraScriptConfig, entry: scriptPaths.entry,
-			output: scriptPaths.output });
+		output.push({
+			...extraScriptConfig, entry: scriptPaths.entry,
+			output: scriptPaths.output
+		});
 	}
 
 	return output;
@@ -346,10 +352,8 @@ function main(environ) {
 	return configs[configName];
 }
 
-
 module.exports = (env) => {
 	let exportedConfigs = [];
-
 	try {
 		exportedConfigs = main(env);
 	} catch (error) {
@@ -365,3 +369,4 @@ module.exports = (env) => {
 
 	return exportedConfigs;
 };
+

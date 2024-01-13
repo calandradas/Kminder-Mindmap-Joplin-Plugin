@@ -3,6 +3,7 @@
 	html += '<a class="diy export" data-type="json">' + _lang_pack[_lang_default]['panels']['export'] + 'Json</a>',
 		html += '<a class="diy export" data-type="md">' + _lang_pack[_lang_default]['panels']['export'] + 'MD</a>',
 		html += '<a class="diy export" data-type="png">' + _lang_pack[_lang_default]['panels']['export'] + 'PNG</a>',
+		//html += '<a class="diy export" data-type="svg">' + _lang_pack[_lang_default]['panels']['export'] + 'SVG</a>',
 		html += '<button class="diy input">' + _lang_pack[_lang_default]['panels']['import'] + '<input type="file" id="fileImport"></button>';
 	$('.editor-title').append(html);
 
@@ -42,21 +43,18 @@
 	$('.export').on('mouseover', function (event) {
 		let $this = $(this),
 			type = $this.data('type'),
-			exportType;
+			exportType, blob;
 		$this.css('cursor', 'pointer');
 
-		switch (type) {
-			case 'md':
-				exportType = 'markdown';
-				break;
-			default:
-				exportType = type;
-				break;
-		}
+		if (type === 'md')
+			exportType = 'markdown';
+		else
+			exportType = type;
+
 		editor.minder.exportData(exportType).then(function (content) {
-			let blob = new Blob([content]);
-			//write mindmap data to PNG file
-			if (exportType == "png") {
+
+			if (exportType === 'png') {
+				//write mindmap data to PNG file
 				let arr = content.split(','), mime = arr[0].match(/:(.*?);/)[1],
 					bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
 				while (n--) {
@@ -64,6 +62,9 @@
 				}
 				blob = new Blob([u8arr], { type: mime });
 			}
+			else
+				blob = new Blob([content],{ type: 'application/'+type});
+
 			let url = URL.createObjectURL(blob);
 			let aLink = $this[0];
 			aLink.href = url;
@@ -85,7 +86,7 @@
 				break;
 			default:
 				console.log("File not supported!");
-				alert('Only .md .json file');
+				alert('Only .md .json file !');
 				return;
 		}
 		let reader = new FileReader();
@@ -104,6 +105,7 @@
 		let parent = window.parent.document.getElementById('mindmap_diagram_json');
 		let data_json, maintopic = _lang_pack[_lang_default]['maintopic'];
 		let init_data_json = `{"root":{"data":{"id":"cmhllt94xb40","created":1661683403686,"text":"${maintopic}"},"children":[{"data":{"id":"cybyhdvw3qg0","created":1704984272746,"text":"Topic1"},"children":[]},{"data":{"id":"cybyhfxtzd40","created":1704984277217,"text":"Topic2"},"children":[]},{"data":{"id":"cybyhhzf1ew0","created":1704984281667,"text":"Topic3"},"children":[]},{"data":{"id":"cybyhjs9st40","created":1704984285588,"text":"Topic4"},"children":[]}]},"template":"default","theme":"fresh-purple","version":"1.4.33"}`;
+
 		if (parent != null && parent.value != "")
 			data_json = parent.value;
 		else

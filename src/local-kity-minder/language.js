@@ -85,7 +85,7 @@ var _lang_pack = {
       'cancle': 'Cancle',
       'externalink': 'External Image Link',
       'preview': 'Preview',
-      'upload': 'Upload'
+      'upload': 'Upload Image'
     },
     'error_message': {
       'title': 'Oops, the Mindmap is error',
@@ -254,7 +254,7 @@ var _lang_pack = {
 
       'mydocument': 'My document',
       'emptydir': 'Empty！',
-      'pickfile': 'Select the file...',
+      'pickfile': 'Select the file',
       'acceptfile': 'Accept file：{0}',
       'dropfile': 'Drop file',
       'unsupportedfile': 'Unsupported file format',
@@ -514,11 +514,11 @@ var _lang_pack = {
       'required': '必填',
       'tooltip': '提示',
       'optional': '选填',
-      'confirm': '确认',
+      'confirm': '确定',
       'cancle': '取消',
       'externalink': '外部图片链接',
       'preview': '预览',
-      'upload': '上传文件'
+      'upload': '上传图片'
     },
     'error_message': {
       'title': '哎呀，脑图出错了',
@@ -963,7 +963,7 @@ var _lang_pack = {
       'cancle': '取消',
       'externalink': '外部画像Link',
       'preview': '預覽',
-      'upload': '上傳'
+      'upload': '上傳画像'
     },
     "error_message": {
       "title": "おっと、マインドマップが間違っていました",
@@ -1129,7 +1129,7 @@ var _lang_pack = {
       },
       "mydocument": "私の文書",
       "emptydir": "ディレクトリが空です!",
-      "pickfile": "ドキュメントを選択...",
+      "pickfile": "ドキュメントを選択",
       "acceptfile": "サポートされている形式: {0}",
       "dropfile": "またはここにファイルをドラッグします",
       "unsupportedfile": "サポートされていないファイル形式",
@@ -1547,7 +1547,7 @@ var _lang_pack = {
       },
       "mydocument": "Mein Dokument",
       "emptydir": "Verzeichnis ist leer!",
-      "pickfile": "Dokument auswählen...",
+      "pickfile": "Dokument auswählen",
       "acceptfile": "Unterstützte Formate: {0}",
       "dropfile": "oder ziehen Sie Dateien hierher",
       "unsupportedfile": "nicht unterstütztes Dateiformat",
@@ -1968,7 +1968,7 @@ var _lang_pack = {
 
       'mydocument': 'Mi documento',
       'emptydir': '¡Vacío!',
-      'pickfile': 'Seleccionar archivo...',
+      'pickfile': 'Seleccionar archivo',
       'acceptfile': 'Aceptar archivo：{0}',
       'dropfile': 'Soltar archivo',
       'unsupportedfile': 'Formato de archivo no compatible',
@@ -2401,7 +2401,7 @@ var _lang_pack = {
 
       'mydocument': 'Mon document',
       'emptydir': 'Vide !',
-      'pickfile': 'Sélectionner le fichier...',
+      'pickfile': 'Sélectionner le fichier',
       'acceptfile': 'Accepter le fichier : {0}',
       'dropfile': 'Déposer le fichier',
       'unsupportedfile': 'Format de fichier non pris en charge',
