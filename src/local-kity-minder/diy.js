@@ -63,7 +63,7 @@
 				blob = new Blob([u8arr], { type: mime });
 			}
 			else
-				blob = new Blob([content],{ type: 'application/'+type});
+				blob = new Blob([content], { type: 'application/' + type });
 
 			let url = URL.createObjectURL(blob);
 			let aLink = $this[0];
@@ -72,28 +72,22 @@
 		});
 	});
 
-	//read mindmap data form import json or md file
+	//read mindmap data from import json or md file
 	$('#fileImport').on('change', function () {
 		let file = fileImport.files[0],
 			importType = file.name.substr(file.name.lastIndexOf('.') + 1);
-		console.log(file);
-		switch (importType) {
-			case 'md':
-				importType = 'markdown';
-				break;
-			case 'json':
-				importType = 'json';
-				break;
-			default:
-				console.log("File not supported!");
-				alert('Only .md .json file !');
-				return;
+		//console.log(file);
+		if (importType === 'md')
+			importType = 'markdown';
+		else {
+			console.log("File not supported!");
+			alert('Only .md .json file !');
 		}
 		let reader = new FileReader();
 		reader.onload = function (e) {
 			let content = reader.result;
 			editor.minder.importData(importType, content).then(function (data) {
-				console.log(data);
+				//console.log(data);
 				$(fileImport).val('');
 			});
 		}
@@ -112,7 +106,7 @@
 			data_json = init_data_json;
 		//loading mindmap data in diagram
 		editor.minder.importData('json', data_json).then(function (data) {
-			console.log(data);
+			//console.log(data);
 			$(data_json).val('');
 		});
 
@@ -137,10 +131,10 @@
 			if (event.ctrlKey == true) {
 				event.preventDefault();
 				if (event.originalEvent.wheelDelta > 0) {
-					console.log('Down');
+					//console.log('Down');
 					editor.minder.execCommand('zoomIn');
 				} else {
-					console.log('Up');
+					//console.log('Up');
 					editor.minder.execCommand('zoomOut');
 				}
 			}

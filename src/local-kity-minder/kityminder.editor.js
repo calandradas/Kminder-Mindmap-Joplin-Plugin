@@ -2231,12 +2231,10 @@
 
 
         $templateCache.put('ui/dialog/image/image.tpl.html',
-            `<div class=\"modal-header\"><h3 class=\"modal-title\">${_lang_pack[_lang_default]['ui']['image']}</h3></div><div class=\"modal-body\"><tabset><tab heading=\"${_lang_pack[_lang_default]['panels']['externalink']}\"><form><div class=\"form-group\" ng-class=\"{true: 'has-success', false: 'has-error'}[urlPassed]\"><label for=\"image-url\">URL:</label><input type=\"text\" class=\"form-control\" ng-model=\"data.url\" ng-blur=\"urlPassed = data.R_URL.test(data.url)\" ng-focus=\"this.value = data.url\" ng-keydown=\"shortCut(\$event)\" id=\"image-url\" placeholder=\"${_lang_pack[_lang_default]['panels']['required']}: Starting with http(s)://\"></div><div class=\"form-group\" ng-class=\"{'has-success' : titlePassed}\"><label for=\"image-title\">${_lang_pack[_lang_default]['panels']['tooltip']}:</label><input type=\"text\" class=\"form-control\" ng-model=\"data.title\" ng-blur=\"titlePassed = true\" id=\"image-title\" placeholder=\"${_lang_pack[_lang_default]['panels']['optional']}\"></div><div class=\"form-group\"><label for=\"image-preview\"${_lang_pack[_lang_default]['panels']['preview']}:</label><img class=\"image-preview\" id=\"image-preview\" ng-src=\"{{ data.url }}\" alt=\"{{ data.title }}\"></div></form></tab><tab heading=\"${_lang_pack[_lang_default]['panels']['upload']}\" active=\"true\"><form><div class=\"form-group\"><label class=\"btn btn-primary\"><input type=\"file\" name=\"upload-image\" id=\"upload-image\" class=\"upload-image\" accept=\".jpg,.JPG,jpeg,JPEG,.png,.PNG,.gif,.GIF\" onchange=\"angular.element(this).scope().uploadImage()\">${_lang_pack[_lang_default]['ui']['pickfile']}</label></div><div class=\"form-group\" ng-class=\"{'has-success' : titlePassed}\"><label for=\"image-title\">${_lang_pack[_lang_default]['panels']['tooltip']}:</label><input type=\"text\" class=\"form-control\" ng-model=\"data.title\" ng-blur=\"titlePassed = true\" id=\"image-title2\" placeholder=\"${_lang_pack[_lang_default]['panels']['optional']}\"></div><div class=\"form-group\"><label for=\"image-preview2\">${_lang_pack[_lang_default]['panels']['preview']}:</label><img class=\"image-preview\" id=\"image-preview2\" ng-src=\"{{ data.url }}\" title=\"{{ data.title }}\" alt=\"{{ data.title }}\"></div></form></tab></tabset></div><div class=\"modal-footer\"><button class=\"btn btn-primary\" ng-click=\"ok()\">${_lang_pack[_lang_default]['panels']['confirm']}</button> <button class=\"btn btn-warning\" ng-click=\"cancel()\">${_lang_pack[_lang_default]['panels']['cancle']}</button></div>`
+            `<div class=\"modal-header\"><h3 class=\"modal-title\">${_lang_pack[_lang_default]['ui']['image']}</h3></div><div class=\"modal-body\"><tabset><tab heading=\"${_lang_pack[_lang_default]['panels']['externalink']}\"><form><div class=\"form-group\" ng-class=\"{true: 'has-success', false: 'has-error'}[urlPassed]\"><label for=\"image-url\">URL:</label><input type=\"text\" class=\"form-control\" ng-model=\"data.url\" ng-blur=\"urlPassed = data.R_URL.test(data.url)\" ng-focus=\"this.value = data.url\" ng-keydown=\"shortCut(\$event)\" id=\"image-url\" placeholder=\"${_lang_pack[_lang_default]['panels']['required']}: Starting with http(s)://\"></div><div class=\"form-group\" ng-class=\"{'has-success' : titlePassed}\"><label for=\"image-title\">${_lang_pack[_lang_default]['panels']['tooltip']}:</label><input type=\"text\" class=\"form-control\" ng-model=\"data.title\" ng-blur=\"titlePassed = true\" id=\"image-title\" placeholder=\"${_lang_pack[_lang_default]['panels']['optional']}\"></div><div class=\"form-group\"><label for=\"image-preview\"${_lang_pack[_lang_default]['panels']['preview']}:</label><img class=\"image-preview\" id=\"image-preview\" ng-src=\"{{ data.url }}\" alt=\"{{ data.title }}\"></div></form></tab><tab heading=\"${_lang_pack[_lang_default]['panels']['upload']}\" active=\"true\"><form><div class=\"form-group\"><label class=\"btn btn-primary\"><input type=\"file\" name=\"upload-image\" id=\"upload-image\" class=\"upload-image\" accept=\".jpg,.JPG,jpeg,JPEG,.png,.PNG,.gif,.GIF\" onchange=\"angular.element(this).scope().uploadImage()\">${_lang_pack[_lang_default]['ui']['pickfile']}</label></div><div class=\"form-group\" ng-class=\"{'has-success' : titlePassed}\"><label for=\"image-title2\">${_lang_pack[_lang_default]['panels']['tooltip']}:</label><input type=\"text\" class=\"form-control\" ng-model=\"data.title\" ng-blur=\"titlePassed = true\" id=\"image-title2\" placeholder=\"${_lang_pack[_lang_default]['panels']['optional']}\"></div><div class=\"form-group\"><label for=\"image-preview2\">${_lang_pack[_lang_default]['panels']['preview']}:</label><img class=\"image-preview\" id=\"image-preview2\" ng-src=\"{{ data.url }}\" title=\"{{ data.title }}\" alt=\"{{ data.title }}\"></div></form></tab></tabset></div><div class=\"modal-footer\"><button class=\"btn btn-primary\" ng-click=\"ok()\">${_lang_pack[_lang_default]['panels']['confirm']}</button> <button class=\"btn btn-warning\" ng-click=\"cancel()\">${_lang_pack[_lang_default]['panels']['cancle']}</button></div>`
         );
 
     }]);
-
-
 
     angular.module('kityminderEditor').service('commandBinder', function () {
         return {
@@ -2791,7 +2789,7 @@
             };
 
 
-            // 自动上传图片，后端需要直接返回图片 URL
+            // read local image as data url,return like "data:image/png;base64" for local loading
             $scope.uploadImage = function (event) {
 
                 var fileInput = $('#upload-image');
@@ -2806,12 +2804,13 @@
                     reader.onload = function (e) {
                         let contentsrc = reader.result;
                         $scope.data.url = contentsrc;
+                        $(fileInput).val('');
                     }
                     reader.readAsDataURL(file);
                 } else {
+                    console.log("Loading Image File not supported!");
                     alert("Only .jpg .gif .png file !");
                 }
-
             };
 
             $scope.shortCut = function (e) {

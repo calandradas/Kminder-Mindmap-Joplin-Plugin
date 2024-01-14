@@ -85,7 +85,12 @@ var _lang_pack = {
       'cancle': 'Cancle',
       'externalink': 'External Image Link',
       'preview': 'Preview',
-      'upload': 'Upload Image'
+      'upload': 'Upload Image',
+      'defaultcolor': 'Default',
+      'latestcolor': 'Latest Used',
+      'commoncolor': 'Common Color',
+      'standardcolor': 'Standard Color',
+      'morecolor': 'More Color'
     },
     'error_message': {
       'title': 'Oops, the Mindmap is error',
@@ -518,7 +523,12 @@ var _lang_pack = {
       'cancle': '取消',
       'externalink': '外部图片链接',
       'preview': '预览',
-      'upload': '上传图片'
+      'upload': '上传图片',
+      'defaultcolor': '默认颜色',
+      'latestcolor': '最近使用',
+      'commoncolor': '常用颜色',
+      'standardcolor': '标准颜色',
+      'morecolor': '更多颜色'
     },
     'error_message': {
       'title': '哎呀，脑图出错了',
@@ -963,7 +973,12 @@ var _lang_pack = {
       'cancle': '取消',
       'externalink': '外部画像Link',
       'preview': '預覽',
-      'upload': '上傳画像'
+      'upload': '上傳画像',
+      'defaultcolor': 'デフォルトカラー',
+      'latestcolor': '最新の使用',
+      'commoncolor': '一般的なカラー',
+      'standardcolor': '標準カラー',
+      'morecolor': 'さらに多くのカラー'
     },
     "error_message": {
       "title": "おっと、マインドマップが間違っていました",
@@ -1381,7 +1396,12 @@ var _lang_pack = {
       'cancle': 'Abbrechen',
       'externalink': 'Externer Bildlink',
       'preview': 'Vorschau',
-      'upload': 'Hochladen'
+      'upload': 'Hochladen',
+      'defaultcolor': 'Default',
+      'latestcolor': 'Neueste Verwendet',
+      'commoncolor': 'Häufige Farbe',
+      'standardcolor': 'Standardfarbe',
+      'morecolor': 'Weitere Farben'
     },
     "error_message": {
       "title": "Hoppla, die Mindmap ist schief gelaufen",
@@ -1799,7 +1819,12 @@ var _lang_pack = {
       'cancle': 'Cancelar',
       'externalink': 'Enlace de imagen externo',
       'preview': 'Vista previa',
-      'upload': 'Subir archivo'
+      'upload': 'Subir archivo',
+      'defaultcolor': 'Predeterminado',
+      'latestcolor': 'Último uso',
+      'commoncolor': 'Color común',
+      'standardcolor': 'Color estándar',
+      'morecolor': 'Más colores'
     },
     'error_message': {
       'title': 'Ups, el mapa mental tiene un error',
@@ -2232,7 +2257,12 @@ var _lang_pack = {
       'cancle': 'Annuler',
       'externalink': 'Lien image externe',
       'preview': 'Aperçu',
-      'upload': 'Téléverser'
+      'upload': 'Téléverser',
+      'defaultcolor': 'Défaut',
+      'latestcolor': 'Récente Utilisation',
+      'commoncolor': 'Couleur commune',
+      'standardcolor': 'Couleur standard',
+      'morecolor': 'Plus de couleurs'
     },
     'error_message': {
       'title': 'Oups, le Mindmap est erroné',
@@ -2251,7 +2281,7 @@ var _lang_pack = {
       'err_share_sync_fail': 'Échec de la synchronisation des données partagées',
       'err_move_file': 'Échec du déplacement du fichier',
       'err_rename': 'Échec du renommage',
-    
+
       'unknownreason': 'Peut-être que des extraterrestres ont trafiqué le code...',
       'pcs_code': {
         3: 'Cette interface n\'est pas prise en charge',
@@ -2387,7 +2417,7 @@ var _lang_pack = {
         'downloadtab': 'Télécharger',
         'createsharetab': 'Partager',
         'managesharetab': 'Mes partages',
-    
+
         'newheader': 'Nouveau',
         'openheader': 'Ouvrir',
         'saveheader': 'Enregistrer',
@@ -2414,7 +2444,7 @@ var _lang_pack = {
       'clearrecentconfirm': 'Voulez-vous effacer la liste des documents récents ?',
       'cleardraft': 'Effacer',
       'cleardraftconfirm': 'Voulez-vous effacer les brouillons ?',
-    
+
       'none_share': 'Pas de partage',
       'public_share': 'Partage public',
       'password_share': 'Partage privé',
@@ -2438,7 +2468,7 @@ var _lang_pack = {
       'share_remove_action': 'Ne pas partager ce mindmap',
       'share_view_action': 'Ouvrir l\'adresse du partage',
       'share_edit_action': 'Modifier le fichier partagé',
-    
+
       'login': 'Se connecter',
       'logout': 'Se déconnecter',
       'switchuser': 'Changer de compte',
@@ -2452,7 +2482,7 @@ var _lang_pack = {
       'mkdir': 'Nouveau répertoire',
       'recycle': 'Corbeille',
       'newdir': 'Répertoire sans titre',
-    
+
       'bold': 'Gras',
       'italic': 'Italique',
       'forecolor': 'Couleur de police',
@@ -2506,32 +2536,32 @@ var _lang_pack = {
       'removeimage': 'Supprimer l\'image',
       'removenote': 'Supprimer la note',
       'resetlayout': 'Réinitialiser',
-    
+
       'justnow': 'À l\'instant',
       'minutesago': 'il y a {0} minutes',
       'hoursago': 'il y a {0} heures',
       'yesterday': 'hier',
       'daysago': 'il y a {0} jours',
       'longago': 'il y a longtemps',
-    
+
       'redirect': 'Vous ouvrez la connexion {0} ; Baidu Mindmap ne peut pas garantir la sécurité de la connexion. Voulez-vous continuer ?',
       'navigator': 'Navigateur',
-    
+
       'unsavedcontent': 'Le fichier actuel n\'a pas été enregistré sur le disque réseau :\n\n{0}\n\nBien que les données non enregistrées soient mises en cache dans le brouillon, effacer le cache du navigateur effacera également le brouillon. ',
-    
+
       'shortcuts': 'Raccourcis',
       'contact': 'Contact et commentaires',
       'email': 'Groupe de messagerie',
       'qq_group': 'Groupe QQ',
       'github_issue': 'Github',
       'baidu_tieba': 'Barre de publication',
-    
+
       'clipboardunsupported': 'Votre navigateur ne prend pas en charge le presse-papiers. Veuillez utiliser la touche de raccourci pour copier',
-    
+
       'load_success': '{0} chargé avec succès',
       'save_success': '{0} a été enregistré dans {1}',
       'autosave_success': '{0} a été enregistré automatiquement à {1}',
-    
+
       'selectall': 'Sélectionner',
       'selectrevert': 'Inverser',
       'selectsiblings': 'Sélectionner les frères et sœurs',
@@ -2568,7 +2598,7 @@ var _lang_pack = {
         }
       },
       'help': {
-    
+
       },
       'hyperlink': {},
       'image': {},

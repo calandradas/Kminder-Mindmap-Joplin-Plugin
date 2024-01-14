@@ -9,10 +9,13 @@ angular.module('ui.colorpicker', [])
                 var defaultColor = scope.setColor() || attrs.defaultColor || '#fff';
 
                 var defaultOptions = {
-                    clearText: '默认颜色',
+                    clearText: _lang_pack[_lang_default]['panels']['defaultcolor'],
+                    //clearText: '默认颜色',
                     defaultColor: defaultColor,
-                    latestText: '最近使用',
-                    commonText: '主题颜色',
+                    latestText: _lang_pack[_lang_default]['panels']['latestcolor'],
+                    //latestText: '最近使用',
+                    commonText: _lang_pack[_lang_default]['panels']['commoncolor'],
+                    //commonText: '常用颜色',
                     commonColor: [
                         [
                             '#ffffff', '#000000', '#eeece1', '#1f497d', '#4f81bd',
@@ -39,12 +42,14 @@ angular.module('ui.colorpicker', [])
                             '#622423', '#4e6128', '#3f3151', '#205867', '#974706'
                         ]
                     ],
-                    standardText: '标准颜色',
+                    standardText: _lang_pack[_lang_default]['panels']['standardcolor'],
+                    //standardText: '标准颜色',
                     standardColor: [
                         '#c00000', '#ff0000', '#ffc000', '#ffff00', '#92d050',
                         '#00b050', '#00b0f0', '#0070c0', '#002060', '#7030a0'
                     ],
-                    moreText: '更多颜色..'
+                    moreText: _lang_pack[_lang_default]['panels']['morecolor']
+                    //moreText: '更多颜色'
                 };
 
 
@@ -87,10 +92,11 @@ angular.module('ui.colorpicker', [])
                     + ' ng-mouseleave="previewColor(setColor() || defaultOptions.defaultColor)"></span>'
                     + '</div>'
                     + '<div class="colorpicker-title colorpicker-morecolor" ng-if="isSupportNativeColorPicker">'
-                    + '<label for="native-color-picker'+ pickerInputId +'" ng-bind="defaultOptions.moreText"></label>'
+                    + '<label for="native-color-picker'+ pickerInputId +'">'+defaultOptions.moreText
                     + '<input id="native-color-picker'+ pickerInputId +'" class="native-color-picker" type="color"'
                     + ' ng-model="nativeColor"'
                     + ' ng-change="selectColor(nativeColor);" />'
+                    + '</label>'
                     + '</div>'
                     + '</div>';
 
@@ -177,6 +183,7 @@ angular.module('ui.colorpicker', [])
                 }
 
                 function keepPickerOpen(e) {
+                    //defaultColor=attrs.defaultColor;
                     e.stopPropagation();
                 }
 

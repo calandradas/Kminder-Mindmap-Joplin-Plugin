@@ -63,8 +63,8 @@
   },
   "files": [
     "dist",
-    "fonts",
-    "grunt",
+    //"fonts",
+    //"grunt",
     "js/*.js",
     "less/**/*.less",
     "Gruntfile.js",
@@ -80,7 +80,7 @@
     },
     "files": [
       "css",
-      "fonts",
+      //"fonts",
       "js"
     ]
   }
