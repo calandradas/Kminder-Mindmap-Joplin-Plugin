@@ -1,6 +1,6 @@
 # Kityminder Mindmap Joplin Plugin
 
-[English](#) [中文](https://github.com/calandradas/Kityminder-Mindmap-Joplin-Plugin/blob/main/Readme_zh.md)
+[English](#) [中文](https://github.com/calandradas/Kityminder-Mindmap-Joplin-Plugin/blob/main/README_zh.md)
 
 Kityminder Mindmap Joplin Plugin is a mindmap plug-in built on Baidu Brain Map opensource project Kity Minder.
 
