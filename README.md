@@ -74,7 +74,7 @@ Other shortcut keys can be seen by right-clicking on items.
 
 If you are interested in the project, you can ⭐STAR️⭐️ it~
 
-[By Me a Coffee](https://www.buymeacoffee.com/calandradu5)
+![By Me a Coffee](https://www.buymeacoffee.com/calandradu5)
 
 ----
 
