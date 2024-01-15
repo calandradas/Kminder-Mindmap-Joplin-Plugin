@@ -2175,7 +2175,7 @@
 
 
         $templateCache.put('ui/directive/resourceEditor/resourceEditor.html',
-            "<div class=\"resource-editor\"><div class=\"input-group\"><input class=\"form-control\" type=\"text\" ng-model=\"newResourceName\" ng-required ng-keypress=\"$event.keyCode == 13 && addResource(newResourceName)\" ng-disabled=\"!enabled\"> <span class=\"input-group-btn\"><button class=\"btn btn-default\" ng-click=\"addResource(newResourceName)\" ng-disabled=\"!enabled\">{{ 'addtag' | lang:'ui/command' }}</button></span></div><div class=\"resource-dropdown clearfix\" id=\"resource-dropdown\"><ul class=\"km-resource\" ng-init=\"resourceListOpen = false\" ng-class=\"{'open': resourceListOpen}\"><li ng-repeat=\"resource in used\" ng-disabled=\"!enabled\" ng-blur=\"blurCB()\"><label style=\"background: {{resourceColor(resource.name)}}\"><input type=\"checkbox\" ng-model=\"resource.selected\" ng-disabled=\"!enabled\"> <span>{{resource.name}}</span></label></li></ul><div class=\"resource-caret\" click-anywhere-but-here=\"resourceListOpen = false\" is-active=\"resourceListOpen\" ng-click=\"resourceListOpen = !resourceListOpen\"><span class=\"caret\"></span></div></div></div>"
+            "<div class=\"resource-editor\"><div class=\"input-group\"><input id=\"haha\" class=\"form-control\" type=\"text\" ng-model=\"newResourceName\" ng-required ng-keypress=\"$event.keyCode == 13 && addResource(newResourceName)\" ng-disabled=\"!enabled\"> <span class=\"input-group-btn\"><button class=\"btn btn-default\" ng-click=\"addResource(newResourceName)\" ng-disabled=\"!enabled\">{{ 'addtag' | lang:'ui/command' }}</button></span></div><div class=\"resource-dropdown clearfix\" id=\"resource-dropdown\"><ul class=\"km-resource\" ng-init=\"resourceListOpen = false\" ng-class=\"{'open': resourceListOpen}\"><li ng-repeat=\"resource in used\" ng-disabled=\"!enabled\" ng-blur=\"blurCB()\"><label style=\"background: {{resourceColor(resource.name)}}\"><input type=\"checkbox\" ng-model=\"resource.selected\" ng-disabled=\"!enabled\"> <span>{{resource.name}}</span></label></li></ul><div class=\"resource-caret\" click-anywhere-but-here=\"resourceListOpen = false\" is-active=\"resourceListOpen\" ng-click=\"resourceListOpen = !resourceListOpen\"><span class=\"caret\"></span></div></div></div>"
         );
 
 
@@ -2231,7 +2231,7 @@
 
 
         $templateCache.put('ui/dialog/image/image.tpl.html',
-            `<div class=\"modal-header\"><h3 class=\"modal-title\">${_lang_pack[_lang_default]['ui']['image']}</h3></div><div class=\"modal-body\"><tabset><tab heading=\"${_lang_pack[_lang_default]['panels']['externalink']}\"><form><div class=\"form-group\" ng-class=\"{true: 'has-success', false: 'has-error'}[urlPassed]\"><label for=\"image-url\">URL:</label><input type=\"text\" class=\"form-control\" ng-model=\"data.url\" ng-blur=\"urlPassed = data.R_URL.test(data.url)\" ng-focus=\"this.value = data.url\" ng-keydown=\"shortCut(\$event)\" id=\"image-url\" placeholder=\"${_lang_pack[_lang_default]['panels']['required']}: Starting with http(s)://\"></div><div class=\"form-group\" ng-class=\"{'has-success' : titlePassed}\"><label for=\"image-title\">${_lang_pack[_lang_default]['panels']['tooltip']}:</label><input type=\"text\" class=\"form-control\" ng-model=\"data.title\" ng-blur=\"titlePassed = true\" id=\"image-title\" placeholder=\"${_lang_pack[_lang_default]['panels']['optional']}\"></div><div class=\"form-group\"><label for=\"image-preview\"${_lang_pack[_lang_default]['panels']['preview']}:</label><img class=\"image-preview\" id=\"image-preview\" ng-src=\"{{ data.url }}\" alt=\"{{ data.title }}\"></div></form></tab><tab heading=\"${_lang_pack[_lang_default]['panels']['upload']}\" active=\"true\"><form><div class=\"form-group\"><label class=\"btn btn-primary\"><input type=\"file\" name=\"upload-image\" id=\"upload-image\" class=\"upload-image\" accept=\".jpg,.JPG,jpeg,JPEG,.png,.PNG,.gif,.GIF\" onchange=\"angular.element(this).scope().uploadImage()\">${_lang_pack[_lang_default]['ui']['pickfile']}</label></div><div class=\"form-group\" ng-class=\"{'has-success' : titlePassed}\"><label for=\"image-title2\">${_lang_pack[_lang_default]['panels']['tooltip']}:</label><input type=\"text\" class=\"form-control\" ng-model=\"data.title\" ng-blur=\"titlePassed = true\" id=\"image-title2\" placeholder=\"${_lang_pack[_lang_default]['panels']['optional']}\"></div><div class=\"form-group\"><label for=\"image-preview2\">${_lang_pack[_lang_default]['panels']['preview']}:</label><img class=\"image-preview\" id=\"image-preview2\" ng-src=\"{{ data.url }}\" title=\"{{ data.title }}\" alt=\"{{ data.title }}\"></div></form></tab></tabset></div><div class=\"modal-footer\"><button class=\"btn btn-primary\" ng-click=\"ok()\">${_lang_pack[_lang_default]['panels']['confirm']}</button> <button class=\"btn btn-warning\" ng-click=\"cancel()\">${_lang_pack[_lang_default]['panels']['cancle']}</button></div>`
+            `<div class=\"modal-header\"><h3 class=\"modal-title\">${_lang_pack[_lang_default]['ui']['image']}</h3></div><div class=\"modal-body\"><form><div class=\"form-group\"><label>${_lang_pack[_lang_default]['ui']['pickfile']} :&nbsp;&nbsp;</label><label  for=\"upload-image\" class=\"btn btn-primary\">${_lang_pack[_lang_default]['ui']['localfile']}</label><input type=\"file\" name=\"upload-image\" id=\"upload-image\" class=\"upload-image\" accept=\"image\/*\" onchange=\"angular.element(this).scope().uploadImage()\"></div><div class=\"form-group\" ng-class=\"{'has-success' : titlePassed}\"><label for=\"image-url\">or URL :</label><input type=\"text\" class=\"form-control\" ng-focus=\"imgURL(\$event);\" ng-keydown=\"shortCut(\$event)\" ng-keyup=\"imgURL(\$event);\" id=\"image-url\" placeholder=\"${_lang_pack[_lang_default]['panels']['required']}: Starting with http(s)://\"></div><div class=\"form-group\" ng-class=\"{'has-success' : titlePassed}\"><label for=\"image-title\">${_lang_pack[_lang_default]['panels']['tooltip']} :</label><input type=\"text\" class=\"form-control\" ng-model=\"data.title\" ng-blur=\"titlePassed = true\" id=\"image-title\" placeholder=\"${_lang_pack[_lang_default]['panels']['optional']}\"></div><div class=\"form-group\"><label>${_lang_pack[_lang_default]['panels']['preview']} :</label><img class=\"image-preview\" id=\"image-preview\" ng-src=\"{{ data.url }}\" title=\"{{ data.title }}\" alt=\"{{ data.title }}\"></div></form></div><div class=\"modal-footer\"><button class=\"btn btn-primary\" ng-click=\"ok()\">${_lang_pack[_lang_default]['panels']['confirm']}</button> <button class=\"btn btn-warning\" ng-click=\"cancel()\">${_lang_pack[_lang_default]['panels']['cancle']}</button></div>`
         );
 
     }]);
@@ -2742,7 +2742,7 @@
                 url: image.url || '',
                 title: image.title || '',
                 //add local image regex data:image/png
-                R_URL: /^(?:data:image\/(?:png|jpg|jpeg)\;base64,)|(?:https:\/\/.*\.(?:png|jpg|jpeg))|(?:http:\/\/.*\.(?:png|jpg|jpeg))/
+                R_URL: /^(?:data:image\/(?:png|jpg|jpeg)\;base64,)|(?:(?:http|https|ftp):\/\/)/
 
             };
 
@@ -2804,13 +2804,26 @@
                     reader.onload = function (e) {
                         let contentsrc = reader.result;
                         $scope.data.url = contentsrc;
+                        $("#image-url").val('');
+                        $('#image-preview').trigger('click');
                         $(fileInput).val('');
                     }
                     reader.readAsDataURL(file);
                 } else {
                     console.log("Loading Image File not supported!");
-                    alert("Only .jpg .gif .png file !");
+                    alert("Only .jpg .gif .png .jpeg file !");
                 }
+            };
+
+            //read url file
+            $scope.imgURL =  function (e) {
+                if(e.target.value !='')
+                    $scope.data.url = e.target.value;
+                else if ($scope.data.url !='' && !/^(?:data:image\/(?:png|jpg|jpeg)\;base64,)/.test($scope.data.url))
+                    e.target.value = $scope.data.url;
+                //if ($scope.data.R_URL.test($scope.data.url))
+                    //$scope.urlPassed = true;
+                //$('#image-preview').trigger('click');
             };
 
             $scope.shortCut = function (e) {
@@ -2824,7 +2837,6 @@
             };
 
             $scope.ok = function () {
-
                 if ($scope.data.R_URL.test($scope.data.url)) {
                     //alert('chenggong');
                     $modalInstance.close({
@@ -2833,7 +2845,7 @@
                     });
                 } else {
                     $scope.urlPassed = false;
-                    //alert('shibai');
+                    //alert($scope.data.url);
                     var $imageUrl = $('#image-url');
                     if ($imageUrl) {
                         $imageUrl.focus();

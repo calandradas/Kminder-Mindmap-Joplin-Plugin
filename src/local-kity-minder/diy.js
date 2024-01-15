@@ -79,9 +79,10 @@
 		//console.log(file);
 		if (importType === 'md')
 			importType = 'markdown';
-		else {
+		else if (importType != 'json' && importType != 'markdown'){
 			console.log("File not supported!");
 			alert('Only .md .json file !');
+			return ; 
 		}
 		let reader = new FileReader();
 		reader.onload = function (e) {
