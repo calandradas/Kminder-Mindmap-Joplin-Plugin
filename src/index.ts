@@ -120,6 +120,7 @@ joplin.plugins.register({
 				options: {
 					'en': 'English',
 					'zh_cn': '简体中文',
+					'zh_hk': '繁體中文',
 					'jp': '日本語',
 					'fr': 'Français',
 					'es': 'Español',
