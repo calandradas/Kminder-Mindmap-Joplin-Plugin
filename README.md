@@ -14,7 +14,7 @@ Forked from xeden3's joplin-plugin-kity-minder project and made several modifica
 
 * Since v0.8.2 supports loading local images into mindmap.
 
-* i18n now include English, 简体中文, 繁體中文、日本語, Español, Français and Deutsch, in Tools->Options->Plugins->Kityminder Mindmap
+* i18n now include English, 简体中文, 繁體中文, 日本語, Español, Français and Deutsch, in Tools->Options->Plugins->Kityminder Mindmap
 
 * Supports switching between different languages.
 
