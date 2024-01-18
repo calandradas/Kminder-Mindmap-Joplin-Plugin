@@ -30,7 +30,7 @@ function buildDialogHTML(diagramBody: string, language: string): string {
 			<input type="" id="mindmap_diagram_png" name="mindmap_diagram_png" value=''>
 			<input type="" id="mindmap_diagram_language" name="mindmap_diagram_language" value='${language}'>
 		</form>
-		`
+		`;
 }
 
 function clearDiskCache(): void {
@@ -79,7 +79,8 @@ joplin.plugins.register({
 			let header = buildDialogHTML(data_json, language);
 			console.log("header", header);
 			let iframe = `<iframe id="mindmap_iframe" style="position:absolute;border:0;width:100%;height:100%;" src="${app_path}\\local-kity-minder\\index.html" title="description"></iframe>`
-			await dialogs.setHtml(handle_dlg, header + iframe);
+			await dialogs.setHtml(handle_dlg, header +iframe);
+
 			await dialogs.setButtons(handle_dlg, [
 				{ id: 'ok', title: 'Save' },
 				{ id: 'cancel', title: 'Close' }

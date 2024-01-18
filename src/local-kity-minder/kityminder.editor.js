@@ -2819,7 +2819,7 @@
             $scope.imgURL =  function (e) {
                 if(e.target.value !='')
                     $scope.data.url = e.target.value;
-                else if ($scope.data.url !='' && !/^(?:data:image\/(?:png|jpg|jpeg)\;base64,)/.test($scope.data.url))
+                else if ($scope.data.url !='' && /^(?:(?:http|https|ftp):\/\/)/.test($scope.data.url))
                     e.target.value = $scope.data.url;
                 //if ($scope.data.R_URL.test($scope.data.url))
                     //$scope.urlPassed = true;

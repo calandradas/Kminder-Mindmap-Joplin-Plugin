@@ -77,12 +77,24 @@
 		let file = fileImport.files[0],
 			importType = file.name.substr(file.name.lastIndexOf('.') + 1);
 		//console.log(file);
-		if (importType === 'md')
-			importType = 'markdown';
-		else if (importType != 'json' && importType != 'markdown'){
-			console.log("File not supported!");
-			alert('Only .md .json file !');
-			return ; 
+		switch (importType) {
+			case 'md':
+				importType = 'markdown';
+				break;
+			case 'mm':
+				importType = 'freemind';
+				break;
+			case 'mmap':
+				importType = 'mindmanager';
+				break;
+			case 'xmind':
+				break;
+			case 'json':
+				break;
+			default:
+				console.log("File not supported!");
+				alert('Only markdown json freemind mindmanager xmind file !');
+				return;
 		}
 		let reader = new FileReader();
 		reader.onload = function (e) {
@@ -105,27 +117,42 @@
 			data_json = parent.value;
 		else
 			data_json = init_data_json;
+
 		//loading mindmap data in diagram
 		editor.minder.importData('json', data_json).then(function (data) {
 			//console.log(data);
 			$(data_json).val('');
 		});
 
-		// set a timmer to sync mindmap data to parent diagram to save data per 1s
-		setInterval(function () {
-			editor.minder.exportData('json').then(function (jsoncontent) {
-				//json and png data not to save until changing
-				if (jsoncontent != init_data_json && parent.value != jsoncontent) {
-					parent.value = jsoncontent;
-					editor.minder.exportData('png').then(function (pngcontent) {
-						let parent_png = window.parent.document.getElementById('mindmap_diagram_png');
-						if (parent_png.value != pngcontent)
-							parent_png.value = pngcontent;
-					});
-				}
-			});
+		//set a timmer to sync mindmap data to parent diagram to save data per 1s
+		if (parent != null)
+			setInterval(function () {
+				editor.minder.exportData('json').then(function (jsoncontent) {
+					//json and png data not to save until changing
+					if (jsoncontent != init_data_json && parent.value != jsoncontent) {
+						parent.value = jsoncontent;
+						editor.minder.exportData('png').then(function (pngcontent) {
+							let parent_png = window.parent.document.getElementById('mindmap_diagram_png');
+							if (parent_png.value != pngcontent)
+								parent_png.value = pngcontent;
+						});
+					}
+				});
+			}, 1000);
 
-		}, 1000);
+		// setInterval(function () {
+		// 	editor.minder.exportData('json').then(function (jsoncontent) {
+		// 		//json and png data not to save until changing
+		// 		if (jsoncontent != init_data_json && mindmap_diagram_json != jsoncontent) {
+		// 			mindmap_diagram_json = jsoncontent;
+		// 			editor.minder.exportData('png').then(function (pngcontent) {
+		// 				if (mindmap_diagram_png != pngcontent)
+		// 					mindmap_diagram_png = pngcontent;
+		// 			});
+		// 		}
+		// 	});
+
+		// }, 1000);
 
 		// mousewheel scroll zoom in/out
 		$(".minder-editor").on('mousewheel DOMMouseScroll', function (event) {
