@@ -12,7 +12,7 @@ Forked from xeden3's joplin-plugin-kity-minder project and made several modifica
 
 * Supports export JSON, MD, and PNG, and import JSON and MD.
 
-* Supports import Xmind with the notes, markers, lables, priority, progress.
+* Now v0.8.5 Supports import Xmind with the notes, markers, lables, priority, progress.
 
 * Since v0.8.2 supports loading local images into mindmap.
 
