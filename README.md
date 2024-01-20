@@ -56,9 +56,9 @@ Then follow the second step of the installation from file.
 
 ## Installation from file
 
-1.Download the latest version of calandra.kityminder.joplin.zip file from https://github.com/calandradas/Kityminder-Mindmap-Joplin-Plugin/releases and uncompress it.
+1.Download the latest version of calandra.kminder.joplin.zip file from https://github.com/calandradas/Kityminder-Mindmap-Joplin-Plugin/releases and uncompress it.
 
-2.Open Joplin's "Tools->Options->Plugins" menu, click on "Manage your plugins", select "Install from file", and select the corresponding calandra.kityminder.joplin.jpl to install it.
+2.Open Joplin's "Tools->Options->Plugins" menu, click on "Manage your plugins", select "Install from file", and select the corresponding calandra.kminder.joplin.jpl to install it.
 
 ## How to use Kminder Mindmap Plugin
 
