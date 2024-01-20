@@ -10,7 +10,9 @@ Forked from xeden3's joplin-plugin-kity-minder project and made several modifica
 
 ## Features
 
-* Supports export JSON, MD, and PNG, and import JSON and MD and Xmind.
+* Supports export JSON, MD, and PNG, and import JSON and MD.
+
+* Supports import Xmind with the notes, markers, lables, priority, progress.
 
 * Since v0.8.2 supports loading local images into mindmap.
 
@@ -24,7 +26,10 @@ Forked from xeden3's joplin-plugin-kity-minder project and made several modifica
 
 ## Roadmap
 
-* Supports Freemind, Mindmanger importing. 
+* Supports Freemind, Mindmanger importing.
+
+* Supports Xmind, Freemind, Mindmanger inner images importing.
+
 * Others
 
 ## Thanks

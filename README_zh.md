@@ -13,6 +13,8 @@ Kminder Mindmap Joplin Plugin基于百度脑图的开源项目Kity Minder构建�
 
 * 支持json、md、png文件格式的导出，支持json、md、xmind格式的导入。
 
+* Xmind格式导入支持notes, markers, lables, priority, progress。
+
 * 自v0.8.2以后实现本地图片的上传功能。
 
 * 多语言国际化现在支持英语、简体中文、繁體中文、日语、西班牙语、法语、德语, 在工具->选项->插件->Kminder Mindmap下调整。
@@ -26,6 +28,9 @@ Kminder Mindmap Joplin Plugin基于百度脑图的开源项目Kity Minder构建�
 ## Roadmap
 
 * 逐步支持Freemind和Mindmanager的文件导入。
+
+*支持Xmind, Freemind和Mindmanager内的图片导入。
+
 * others
 
 ## 感谢
