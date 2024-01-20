@@ -1,9 +1,9 @@
-# Kityminder Mindmap Joplin Plugin介绍
+# Kminder Mindmap Joplin Plugin介绍
 
 [English](https://github.com/calandradas/Kityminder-Mindmap-Joplin-Plugin) [中文](#)
 
 
-Kityminder Mindmap Joplin Plugin基于百度脑图的开源项目Kity Minder构建的Joplin思维导图插件.
+Kminder Mindmap Joplin Plugin基于百度脑图的开源项目Kity Minder构建的Joplin思维导图插件.
 
 从xeden3的joplin-plugin-kity-minder项目fork,做了功能提升.
 
@@ -15,7 +15,7 @@ Kityminder Mindmap Joplin Plugin基于百度脑图的开源项目Kity Minder构�
 
 * 自v0.8.2以后实现本地图片的上传功能。
 
-* 多语言国际化现在支持英语、简体中文、繁體中文、日语、西班牙语、法语、德语, 在工具->选项->插件->Kityminder Mindmap下调整。
+* 多语言国际化现在支持英语、简体中文、繁體中文、日语、西班牙语、法语、德语, 在工具->选项->插件->Kminder Mindmap下调整。
     
 * 支持多语言的切换。
 

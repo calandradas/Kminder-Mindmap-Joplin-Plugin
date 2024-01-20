@@ -1,8 +1,8 @@
-# Kityminder Mindmap Joplin Plugin
+# Kminder Mindmap Joplin Plugin
 
 [English](#) [中文](https://github.com/calandradas/Kityminder-Mindmap-Joplin-Plugin/blob/main/README_zh.md)
 
-Kityminder Mindmap Joplin Plugin is a mindmap plug-in built on Baidu Brain Map opensource project Kity Minder.
+Kminder Mindmap Joplin Plugin is a mindmap plug-in built on Baidu Brain Map opensource project Kity Minder.
 
 Forked from xeden3's joplin-plugin-kity-minder project and made several modifications.
 
@@ -14,7 +14,7 @@ Forked from xeden3's joplin-plugin-kity-minder project and made several modifica
 
 * Since v0.8.2 supports loading local images into mindmap.
 
-* i18n now include English, 简体中文, 繁體中文, 日本語, Español, Français and Deutsch, in Tools->Options->Plugins->Kityminder Mindmap
+* i18n now include English, 简体中文, 繁體中文, 日本語, Español, Français and Deutsch, in Tools->Options->Plugins->Kminder Mindmap
 
 * Supports switching between different languages.
 
@@ -54,7 +54,7 @@ Then follow the second step of the installation from file.
 
 2.Open Joplin's "Tools->Options->Plugins" menu, click on "Manage your plugins", select "Install from file", and select the corresponding calandra.kityminder.joplin.jpl to install it.
 
-## How to use Kityminder Mindmap Plugin
+## How to use Kminder Mindmap Plugin
 
 After the installation is complete, create a new note, and a brain icon will appear in the upper right corner of Joplin. Click it to enter the mind map editing mode. To edit an existing mindmap, you need to be in markdown mode. When the mouse is placed on the mindmap, an Edit icon will appear. Click it to enter the mind map editing mode.
 

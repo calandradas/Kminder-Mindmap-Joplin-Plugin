@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>KityMinder Editor - Powered By FEX</title>
+	<title>Kminder Editor</title>
 
 	<link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
 
@@ -50,10 +50,7 @@
 <body ng-app="kityminderWindow" ng-controller="MainController">
 	<h1 class="editor-title">
 		<div style="float:right;color:#fff">
-			<span style="padding: 0 0 0 15px;">Zoom In/Out--Ctrl+Scoll</span>
-			<a href="#" style="color: #fff;font-size: 8px;padding: 0 10px 0 100px;">
-				KityMinder Editor - Powered By FEX
-			</a>
+			<span style="padding: 0 10px 0 100px;">Zoom In/Out--Ctrl+Scoll</span>
 		</div>
 	</h1>
 	<kityminder-editor on-init="initEditor(editor, minder)" data-theme="fresh-green"></kityminder-editor>
@@ -80,6 +77,7 @@
 <script src="./bower_components/json-diff/json-diff.js"></script>
 <script src="./bower_components/kityminder-core/dist/kityminder.core.min.js"></script>
 <script src="./bower_components/color-picker/dist/color-picker.min.js"></script>
+<script src="./bower_components/zip/zip.js" charset="utf-8"></script>
 <!-- endbower -->
 <script src="language.js"></script>
 <script src="kityminder.editor.js"></script>

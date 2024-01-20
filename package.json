@@ -1,5 +1,5 @@
 {
-  "name": "joplin-plugin-Kityminder-Mindmap",
+  "name": "joplin-plugin-Kminder-Mindmap",
   "version": "0.8.4",
   "scripts": {
     "dist": "webpack --env joplin-plugin-config=buildMain && webpack --env joplin-plugin-config=buildExtraScripts && webpack --env joplin-plugin-config=createArchive",

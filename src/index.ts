@@ -128,17 +128,17 @@ joplin.plugins.register({
 					'de': 'Deutsch',
 				},
 				type: SettingItemType.String,
-				section: 'settings.kityminder',
+				section: 'settings.kminder',
 				public: true,
 				label: 'Language',
-				description: 'You can choose the language you need, including English, 简体中文, 日本語, Français, Español, Deutsch.'
+				description: 'You can choose the language you need, including English, 简体中文, 繁體中文, 日本語, Français, Español, Deutsch.'
 			},
 		});
 
 
 
-		await joplin.settings.registerSection('settings.kityminder', {
-			label: 'Kityminder Mindmap',
+		await joplin.settings.registerSection('settings.kminder', {
+			label: 'Kminder Mindmap',
 			iconName: 'fas fa-brain'
 		});
 
@@ -156,7 +156,7 @@ joplin.plugins.register({
 
 		// Register menu
 		const commandsSubMenu: MenuItem[] = Object.values(CommandsId).map(command => ({ commandName: command }));
-		await joplin.views.menus.create('menu-kityminder', 'Kityminder Mindmap', commandsSubMenu, MenuItemLocation.Tools);
+		await joplin.views.menus.create('menu-kminder', 'Kminder Mindmap', commandsSubMenu, MenuItemLocation.Tools);
 
 		// 通过按键来新增思维导图
 		await joplin.commands.register({
