@@ -91,12 +91,12 @@
                 break;
             case 'mmap':
                 importType = 'mindmanager';
-                editor.minder.importData(importType, file,1).then(function (data) {
+                editor.minder.importData(importType, file,0).then(function (data) {
                     $(fileImport).val('');
                 });
                 break;
             case 'xmind':
-                editor.minder.importData(importType, file,1).then(function (data) {
+                editor.minder.importData(importType, file,0).then(function (data) {
                     $(fileImport).val('');
                 });
                 break;
