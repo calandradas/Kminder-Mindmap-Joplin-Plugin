@@ -13,7 +13,7 @@ Kminder Mindmap Joplin Plugin基于百度脑图的开源项目Kity Minder构建�
 
 * 支持json、md、png文件格式的导出，支持json、md、xmind格式的导入。
 
-* 自v0.8.5支持**Xmind格式导入，并且支持代入images, notes, markers, lables, priority, progress**。
+* 自v0.8.5支持**Xmind格式导入，并且支持代入images, links, notes, markers, lables, priority, progress**。
 
 * 自v0.8.2以后实现本地图片的上传功能。
 
