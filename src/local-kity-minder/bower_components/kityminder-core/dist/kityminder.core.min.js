@@ -1,6 +1,6 @@
 /*!
  * ====================================================
- * Kity Minder Core - v1.4.50 - 2024-01-21
+ * Kity Minder Core - v1.4.50 - 2024-01-22
  * https://github.com/fex-team/kityminder-core
  * GitHub: https://github.com/fex-team/kityminder-core.git 
  * Copyright (c) 2024 Baidu FEX; Licensed BSD-3-Clause
@@ -802,11 +802,10 @@
                         return protocol.decode(data, this, option).then(function (json) {
                             minder.importJson(json);
                             return json;
+                        }); else return Promise.resolve(protocol.decode(data, this, option)).then(function (json) {
+                            minder.importJson(json);
+                            return json;
                         });
-                    else return Promise.resolve(protocol.decode(data, this, option)).then(function (json) {
-                        minder.importJson(json);
-                        return json;
-                    });
                 },
                 decodeData: function (protocolName, data, option) {
                     var json, protocol;
@@ -3203,27 +3202,26 @@
             _p.r(61);
             _p.r(62);
             _p.r(63);
+            _p.r(64);
+            _p.r(69);
             _p.r(65);
+            _p.r(68);
+            _p.r(67);
             _p.r(70);
             _p.r(66);
-            _p.r(69);
-            _p.r(68);
-            _p.r(71);
-            _p.r(64);
-            _p.r(67);
             _p.r(40);
             _p.r(36);
             _p.r(37);
             _p.r(38);
             _p.r(39);
             _p.r(41);
-            _p.r(78);
-            _p.r(81);
+            _p.r(77);
             _p.r(80);
             _p.r(79);
-            _p.r(81);
-            _p.r(83);
+            _p.r(78);
+            _p.r(80);
             _p.r(82);
+            _p.r(81);
             _p.r(0);
             _p.r(1);
             _p.r(2);
@@ -3231,12 +3229,12 @@
             _p.r(4);
             _p.r(5);
             _p.r(6);
-            _p.r(72);
-            _p.r(76);
-            _p.r(73);
+            _p.r(71);
             _p.r(75);
+            _p.r(72);
             _p.r(74);
-            _p.r(77);
+            _p.r(73);
+            _p.r(76);
             module.exports = kityminder;
         }
     };
@@ -6913,11 +6911,8 @@
         }
     };
 
-    //src/protocol/freemind.js
-    _p[64] = {};
-
     //src/protocol/json.js
-    _p[65] = {
+    _p[64] = {
         value: function (require, exports, module) {
             var data = _p.r(12);
             data.registerProtocol("json", module.exports = {
@@ -6936,7 +6931,7 @@
     };
 
     //src/protocol/markdown.js
-    _p[66] = {
+    _p[65] = {
         value: function (require, exports, module) {
             var data = _p.r(12);
             var LINE_ENDING_SPLITER = /\r\n|\r|\n/;
@@ -7067,7 +7062,7 @@
     };
 
     //src/protocol/mindmanager.js
-    _p[67] = {
+    _p[66] = {
         value: function (require, exports, module) {
             var data = _p.r(12);
             var Minder = _p.r(19);
@@ -7078,22 +7073,9 @@
                 mineType: "application/vnd.mindjet.mindmanager",
                 decode: decode
             });
-            // 标签 map
-            var markerMap = {
-                'urn:mindjet:Prio1': ['priority', 1],
-                'urn:mindjet:Prio2': ['priority', 2],
-                'urn:mindjet:Prio3': ['priority', 3],
-                'urn:mindjet:Prio4': ['priority', 4],
-                'urn:mindjet:Prio5': ['priority', 5],
-                '0': ['progress', 1],
-                '25': ['progress', 3],
-                '50': ['progress', 5],
-                '75': ['progress', 7],
-                '100': ['progress', 9]
-            };
             async function decode(file) {
-                var entryFile, kmjson;
-                //读取zip格式的xmind文件
+                var entryFile;
+                //读取zip格式的MindManager文件
                 var entries = await new zip.ZipReader(new zip.BlobReader(file)).getEntries();
                 var imageEntries = {};
                 while (entry = entries.pop()) {
@@ -7113,7 +7095,7 @@
                     return await json2km(json, imageEntries);
                 }
                 else
-                    console.log(new Error("Xmind File corruption!"));
+                    console.log(new Error("MindManager File corruption!"));
             }
             async function json2km(json, imageEntries) {
                 var kmjson = JSON.parse('{"root":{}}');
@@ -7128,7 +7110,7 @@
                 //text
                 obj.data = {
                     text: topic.Text && topic.Text.PlainText || ''
-                }; // 节点默认的文本，没有Text属性
+                };
                 // task
                 if (topic.Task) {
                     var type;
@@ -7152,7 +7134,7 @@
                 //lable
                 if (topic.TextLabels && topic.TextLabels.TextLabel && topic.TextLabels.TextLabel.length > 0) {
                     obj.data.resource = [];
-                    topic.TextLabels.TextLabel.forEach(element => {
+                    topic.TextLabels.TextLabel.forEach(function (element) {
                         obj.data.resource.push(element.TextLabelName);
                     });
                 }
@@ -7182,11 +7164,24 @@
                     }
                 }
             }
+            // 标签 map
+            var markerMap = {
+                "urn:mindjet:Prio1": ["priority", 1],
+                "urn:mindjet:Prio2": ["priority", 2],
+                "urn:mindjet:Prio3": ["priority", 3],
+                "urn:mindjet:Prio4": ["priority", 4],
+                "urn:mindjet:Prio5": ["priority", 5],
+                "0": ["progress", 1],
+                "25": ["progress", 3],
+                "50": ["progress", 5],
+                "75": ["progress", 7],
+                "100": ["progress", 9]
+            };
         }
     };
 
     //src/protocol/png.js
-    _p[68] = {
+    _p[67] = {
         value: function (require, exports, module) {
             var kity = _p.r(17);
             var data = _p.r(12);
@@ -7400,7 +7395,7 @@
     };
 
     //src/protocol/svg.js
-    _p[69] = {
+    _p[68] = {
         value: function (require, exports, module) {
             var data = _p.r(12);
             function cleanSVG(svgDom, x, y) {
@@ -7665,7 +7660,7 @@
     };
 
     //src/protocol/text.js
-    _p[70] = {
+    _p[69] = {
         value: function (require, exports, module) {
             var data = _p.r(12);
             var Browser = _p.r(17).Browser;
@@ -7866,7 +7861,7 @@
     };
 
     //src/protocol/xmind.js
-    _p[71] = {
+    _p[70] = {
         value: function (require, exports, module) {
             var data = _p.r(12);
             var Minder = _p.r(19);
@@ -7878,7 +7873,7 @@
                 decode: decode
             });
             async function decode(file) {
-                var entryFile, kmjson;
+                var entryFile;
                 //读取zip格式的xmind文件
                 var entries = await new zip.ZipReader(new zip.BlobReader(file)).getEntries();
                 var imageEntries = {};
@@ -7901,8 +7896,8 @@
                 }
                 else
                     console.log(new Error("Xmind File corruption!"));
-
-
+        
+        
             }
             async function json2km(json, imageEntries) {
                 var kmjson = JSON.parse('{"root":{}}');
@@ -7914,11 +7909,11 @@
                 return kmjson;
             }
             async function processTopic(topic, obj, imageEntries) {
-                //text
+                //处理文本
                 obj.data = {
                     text: topic.title
                 };
-                //markers
+                // 处理标签
                 if (topic.markers) {
                     var markers = topic.markers;
                     var type;
@@ -7932,8 +7927,9 @@
                         if (type) obj.data[type[0]] = type[1];
                     }
                 }
-                //hyperlink
-                if (topic.href) obj.data.hyperlink = topic.href;
+                // 处理超链接
+                if (topic.href)
+                    obj.data.hyperlink = topic.href;
                 //note
                 if (topic.notes) obj.data.note = topic.notes.plain.content;
                 //lable
@@ -7944,19 +7940,19 @@
                     obj.data.image = await imageEntry.getData(new zip.Data64URIWriter());
                     obj.data.imageSize = await getImgSize(obj.data.image);
                 }
-                //children
+                //处理子节点
                 var topics = topic.children && topic.children.attached;
                 if (topics) {
                     var tmp = topics;
                     if (tmp.length && tmp.length > 0) {
-                        //multi
+                        //多个子节点
                         obj.children = [];
                         for (var i in tmp) {
                             obj.children.push({});
                             await processTopic(tmp[i], obj.children[i], imageEntries);
                         }
                     } else {
-                        //only one
+                        //一个子节点
                         obj.children = [{}];
                         await processTopic(tmp, obj.children[0], imageEntries);
                     }
@@ -8003,7 +7999,7 @@
     };
 
     //src/template/default.js
-    _p[72] = {
+    _p[71] = {
         value: function (require, exports, module) {
             var template = _p.r(31);
             template.register("default", {
@@ -8029,7 +8025,7 @@
     };
 
     //src/template/filetree.js
-    _p[73] = {
+    _p[72] = {
         value: function (require, exports, module) {
             var template = _p.r(31);
             template.register("filetree", {
@@ -8049,7 +8045,7 @@
     };
 
     //src/template/fish-bone.js
-    _p[74] = {
+    _p[73] = {
         value: function (require, exports, module) {
             var template = _p.r(31);
             template.register("fish-bone", {
@@ -8083,7 +8079,7 @@
     };
 
     //src/template/right.js
-    _p[75] = {
+    _p[74] = {
         value: function (require, exports, module) {
             var template = _p.r(31);
             template.register("right", {
@@ -8099,7 +8095,7 @@
     };
 
     //src/template/structure.js
-    _p[76] = {
+    _p[75] = {
         value: function (require, exports, module) {
             var template = _p.r(31);
             template.register("structure", {
@@ -8114,7 +8110,7 @@
     };
 
     //src/template/tianpan.js
-    _p[77] = {
+    _p[76] = {
         value: function (require, exports, module) {
             var template = _p.r(31);
             template.register("tianpan", {
@@ -8135,7 +8131,7 @@
     };
 
     //src/theme/default.js
-    _p[78] = {
+    _p[77] = {
         value: function (require, exports, module) {
             var theme = _p.r(32);
             ["classic", "classic-compact"].forEach(function (name) {
@@ -8193,7 +8189,7 @@
     };
 
     //src/theme/fish.js
-    _p[79] = {
+    _p[78] = {
         value: function (require, exports, module) {
             var theme = _p.r(32);
             theme.register("fish", {
@@ -8244,7 +8240,7 @@
     };
 
     //src/theme/fresh.js
-    _p[80] = {
+    _p[79] = {
         value: function (require, exports, module) {
             var kity = _p.r(17);
             var theme = _p.r(32);
@@ -8313,7 +8309,7 @@
     };
 
     //src/theme/snow.js
-    _p[81] = {
+    _p[80] = {
         value: function (require, exports, module) {
             var theme = _p.r(32);
             ["snow", "snow-compact"].forEach(function (name) {
@@ -8367,7 +8363,7 @@
     };
 
     //src/theme/tianpan.js
-    _p[82] = {
+    _p[81] = {
         value: function (require, exports, module) {
             var theme = _p.r(32);
             ["tianpan", "tianpan-compact"].forEach(function (name) {
@@ -8429,7 +8425,7 @@
     };
 
     //src/theme/wire.js
-    _p[83] = {
+    _p[82] = {
         value: function (require, exports, module) {
             var theme = _p.r(32);
             theme.register("wire", {
