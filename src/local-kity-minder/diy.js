@@ -85,10 +85,6 @@
             case 'json':
                 readContent(importType, file);
                 break;
-            case 'mm':
-                importType = 'freemind';
-                readContent(importType, file);
-                break;
             case 'mmap':
                 importType = 'mindmanager';
                 editor.minder.importData(importType, file,0).then(function (data) {
@@ -102,7 +98,7 @@
                 break;
             default:
                 console.log("File not supported!");
-                alert('Only markdown json freemind mindmanager xmind file !');
+                alert('Only markdown json mindmanager xmind file !');
                 return;
         }
         function readContent(importType, file) {
