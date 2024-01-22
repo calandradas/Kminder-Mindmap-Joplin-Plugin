@@ -1,6 +1,6 @@
 # Kminder Mindmap Joplin Plugin介绍
 
-[English](https://github.com/calandradas/Kityminder-Mindmap-Joplin-Plugin) [中文](#)
+[English](https://github.com/calandradas/Kminder-Mindmap-Joplin-Plugin) [中文](#)
 
 
 Kminder Mindmap Joplin Plugin基于百度脑图的开源项目Kity Minder构建的Joplin思维导图插件.
@@ -47,7 +47,7 @@ Kminder Mindmap Joplin Plugin基于百度脑图的开源项目Kity Minder构建�
 ## 编译安装
 
 ```bash
-git clone https://github.com/calandradas/Kityminder-Mindmap-Joplin-Plugin.git
+git clone https://github.com/calandradas/Kminder-Mindmap-Joplin-Plugin.git
 npm install -g yo
 npm install -g generator-joplin
 yo joplin --update
@@ -58,7 +58,7 @@ npm run dist
 
 ## 从文件安装
 
-* 1 先通过 https://github.com/calandradas/Kityminder-Mindmap-Joplin-Plugin/releases 下载最新版本的 calandra.kminder.joplin.zip 文件，并解压缩
+* 1 先通过 https://github.com/calandradas/Kminder-Mindmap-Joplin-Plugin/releases 下载最新版本的 calandra.kminder.joplin.zip 文件，并解压缩
 
 * 2 打开Joplin的 "工具\选项\插件" 菜单，点击 "管理你的插件"，选择 "从文件安装"，选择对应的 calandra.kminder.joplin.jpl 即可
 

@@ -1,6 +1,6 @@
 # Kminder Mindmap Joplin Plugin
 
-[English](#) [中文](https://github.com/calandradas/Kityminder-Mindmap-Joplin-Plugin/blob/main/README_zh.md)
+[English](#) [中文](https://github.com/calandradas/Kminder-Mindmap-Joplin-Plugin/blob/main/README_zh.md)
 
 Kminder Mindmap Joplin Plugin is a mindmap plug-in built on Baidu Brain Map opensource project Kity Minder.
 
@@ -45,7 +45,7 @@ Thanks to the following teams and individuals for their excellent work:
 ## Compiling and Installation
 
 ```bash
-git clone https://github.com/calandradas/Kityminder-Mindmap-Joplin-Plugin.git
+git clone https://github.com/calandradas/Kminder-Mindmap-Joplin-Plugin.git
 npm install -g yo
 npm install -g generator-joplin
 yo joplin --update
@@ -56,7 +56,7 @@ Then follow the second step of the installation from file.
 
 ## Installation from file
 
-1.Download the latest version of calandra.kminder.joplin.zip file from https://github.com/calandradas/Kityminder-Mindmap-Joplin-Plugin/releases and uncompress it.
+1.Download the latest version of calandra.kminder.joplin.zip file from https://github.com/calandradas/Kminder-Mindmap-Joplin-Plugin/releases and uncompress it.
 
 2.Open Joplin's "Tools->Options->Plugins" menu, click on "Manage your plugins", select "Install from file", and select the corresponding calandra.kminder.joplin.jpl to install it.
 
