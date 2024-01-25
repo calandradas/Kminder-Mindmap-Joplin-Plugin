@@ -3,11 +3,11 @@
 	"id": "calandra.kminder.joplin",
 	"app_min_version": "2.8",
 	"version": "0.8.6",
-	"name": "Kminder Mindmap Joplin Plugin",
-	"description": "Mindmap Joplin Plugin, i18n six languages, Import Xmind|json|md, Export json|png|md",
+	"name": "Kminder Mindmap",
+	"description": "Mindmap Joplin Plugin, i18n seven languages, Import Xmind|MindManager|json|md, Export json|png|md",
 	"author": "calandra das",
-	"homepage_url": "https://github.com/calandradas/Kityminder-Mindmap-Joplin-Plugin",
-	"repository_url": "https://github.com/calandradas/Kityminder-Mindmap-Joplin-Plugin.git",
-	"keywords": [],
+	"homepage_url": "https://github.com/calandradas/Kminder-Mindmap-Joplin-Plugin",
+	"repository_url": "https://github.com/calandradas/Kminder-Mindmap-Joplin-Plugin.git",
+	"keywords": ["kminder","xmind","mindmanager","mindmap"],
 	"categories": []
 }
