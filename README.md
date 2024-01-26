@@ -14,15 +14,11 @@ Forked from xeden3's joplin-plugin-kity-minder project and made several modifica
 
 * Now v0.8.6 Supports import **Xmind and MindManager** with their images, links, notes, markers, lables, priority, progress.
 
-* Since v0.8.2 supports loading local images into mindmap.
+* Supports loading local images into mindmap.
 
-* i18n now include English, 简体中文, 繁體中文, 日本語, Español, Français and Deutsch, in Tools->Options->Plugins->Kminder Mindmap
+* i18n now include English, 简体中文, 繁體中文, 日本語, Español, Français and Deutsch.
 
-* Supports switching between different languages.
-
-* Removed the native Kity Minder Baidu image search function, and internationalized all the text. 
-
-* Adjusted part of the UI to make it more in line with operating habits.
+* Supports switching between different languages, in Tools->Options->Plugins->Kminder Mindmap.
 
 ## Roadmap
 
