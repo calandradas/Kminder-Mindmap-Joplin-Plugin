@@ -4,7 +4,7 @@ import { ContentScriptType, SettingItemType, MenuItem, MenuItemLocation, DialogR
 import { isDiagramResource } from './resources'
 import { createDiagramResource, getDiagramResource, updateDiagramResource } from './resources';
 import { ToolbarButtonLocation } from 'api/types';
-import { tmpdir } from 'os'
+import { platform, tmpdir } from 'os'
 import { sep } from 'path'
 const fs = joplin.require('fs-extra')
 
@@ -20,6 +20,12 @@ const CommandsId = {
 // 插入markdown语句
 function diagramMarkdown(diagramId: string) {
 	return `![mindmap](:/${diagramId})`
+}
+
+function escapeQuotes(text: string) {
+	return text
+		.replace(/["]/g, '&quot;')
+		.replace(/[']/g, '&#39;');
 }
 
 // 创建dlg内嵌form
@@ -71,6 +77,14 @@ joplin.plugins.register({
 			}
 		})
 
+		function getIframePath() {
+			let iframePath = `${app_path}\\local-kity-minder\\index.html`;
+			if (platform() === 'win32') {
+				iframePath = `/${iframePath}`;
+			}
+			return iframePath;
+		}
+
 		async function open_edit_dlg(data_json: string, diagramId: string, type: string = "addnew") {
 			let dialogs = joplin.views.dialogs;
 			let language = await joplin.settings.value('language') as string;
@@ -78,7 +92,12 @@ joplin.plugins.register({
 
 			let header = buildDialogHTML(data_json, language);
 			console.log("header", header);
-			let iframe = `<iframe id="mindmap_iframe" style="position:absolute;border:0;width:100%;height:100%;" src="${app_path}\\local-kity-minder\\index.html" title="description"></iframe>`
+			let iframe = `<iframe
+				id="mindmap_iframe"
+				style="position:absolute;border:0;width:100%;height:100%;"
+				src="${escapeQuotes(getIframePath())}"
+				title="description"
+			></iframe>`;
 			await dialogs.setHtml(handle_dlg, header +iframe);
 
 			await dialogs.setButtons(handle_dlg, [
