@@ -8,8 +8,8 @@ jobs:
       # contents: write is necessary to allow uploading release artifacts.
       contents: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@main
+      - uses: actions/setup-node@main
         with:
           node-version: '20.x'
           registry-url: 'https://registry.npmjs.org'
@@ -17,7 +17,17 @@ jobs:
       - run: npm i
 
       - name: Upload built plugin
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@main
         with:
-          name: plugin.jpl
+          name: Kminder-Mindmap-Joplin-Plugin.jpl
           path: ./publish/calandra.kminder.joplin.jpl
+          
+      - name: Upload plugin to release
+        uses: softprops/action-gh-release@master
+        if: steps.tag.outputs.status == 'success' && !cancelled()
+        env:
+          GITHUB_TOKEN: ${{ secrets.R8000_ACT }}
+        with:
+          tag_name: ${{ steps.tag.outputs.release_tag }}
+          #body_path: release.txt
+          files: ./publish/*
