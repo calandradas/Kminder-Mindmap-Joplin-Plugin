@@ -27,6 +27,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.R8000_ACT }}
         with:
-          tag_name: ${{ Kminder-Mindmap-Joplin-Plugin-$(date +"%Y.%m.%d-%H%M") }}
-          #body_path: release.txt
+          #tag_name: ${{ Kminder-Mindmap-Joplin-Plugin-$(date +"%Y.%m.%d-%H%M") }}
           files: ./publish/*
